@@ -1,0 +1,35 @@
+/* overpass-300normal */
+@font-face {
+	font-family: 'Overpass';
+	font-style: normal;
+	font-weight: 400;
+	font-display: fallback;
+	src:
+		local('Overpass Light '),
+		local('Overpass-Light'),
+		url('/theme/fonts/overpass-400.woff2') format('woff2');
+}
+
+/* overpass-600normal */
+@font-face {
+	font-family: 'Overpass';
+	font-style: normal;
+	font-weight: 600;
+	font-display: fallback;
+	src:
+		local('Overpass Bold '),
+		local('Overpass-Bold'),
+		url('/theme/fonts/overpass-600.woff2') format('woff2');
+}
+
+/* fira-mono-400normal */
+@font-face {
+	font-family: 'Fira Mono';
+	font-style: normal;
+	font-weight: 400;
+	font-display: fallback;
+	src:
+		local('Fira Mono'),
+		local('Fira-Mono'),
+		url('/theme/fonts/fira-mono-400.woff2') format('woff2');
+}
