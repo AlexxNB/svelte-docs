@@ -1,4 +1,6 @@
 * [About](about)
+* [Getting Started](getting-started)
 * Components
-    - [Button](/components/button)
+    - [Button](components/button)
 * [Github](https://github.com/alexxnb)
+asdfsdf

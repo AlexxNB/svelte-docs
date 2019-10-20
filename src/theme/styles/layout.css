@@ -85,8 +85,44 @@ nav{
 	box-shadow: 0 0 15px -5px var(--dark);
 	overflow-x: hidden;
 	transition: .3s;
+	transition-delay: .2s;
 }
 
+nav span, nav a{
+	color: var(--text-sidebar);
+	white-space: nowrap;
+	font-size:1.2em;
+	opacity: .75;
+	transition: .2s;
+}
+
+nav ul,nav ul li{
+	display: block;
+	padding:0px;
+	margin:0px;
+}
+
+nav ul{
+	padding:2em;
+}
+
+nav ul li ul{
+	padding:0 0 0 2em;
+}
+
+nav ul li span,nav ul li a{
+	text-transform: uppercase;
+	font-weight:600;
+}
+
+nav ul li span, nav ul li a:hover{
+	opacity:1;
+}
+
+nav ul li ul span,nav ul li ul a{
+	text-transform: initial;
+	font-weight:400;
+}
 
 /* Content */
 main{

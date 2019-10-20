@@ -4,10 +4,12 @@ import commonjs from 'rollup-plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import {markdown} from 'svelte-preprocess-markdown';
-import {pagesRoutes} from './sys/rollup_plugin_routes';
 import postcss from 'rollup-plugin-postcss';
 import postcssImport from 'postcss-import';
 import globsync from "rollup-plugin-globsync";
+
+import {pagesRoutes} from './sys/rollup_plugin_routes';
+import {pagesSections} from './sys/rollup_plugin_sections';
 
 
 const production = !process.env.ROLLUP_WATCH;
@@ -22,14 +24,11 @@ export default {
 	},
 	plugins: [
 		pagesRoutes(),
+		pagesSections(),
 		globsync({
-            patterns : [
-                "src/theme/assets/**/*",
-            ],
+            patterns : ["src/theme/assets/**/*"],
 			dest : "./public/theme",
-			options: {
-				transform: file => file.replace('src/theme/assets/','')
-			}
+			options: {transform: file => file.replace('src/theme/assets/','')}
         }),
 		svelte({
 			dev: !production,

@@ -12,7 +12,7 @@
     --code: #fdf6e3;
 
     --text: var(--dark);
-    --text-sidebar:rgb(255,255,255,.75);
+    --text-sidebar:var(--white);
 
 
     --topbar-height: 50px;
