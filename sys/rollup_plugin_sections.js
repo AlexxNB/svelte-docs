@@ -19,14 +19,13 @@ function getSections() {
 
     let acc = [];
     elements.forEach( el => {
-        let section = {title:'',url:false,external: false};
+        let section = {title:'',url:false};
 
         const re_url = /\[(.+)\]\((.+)\)/
         if(el[1].match(re_url)){
             const url = re_url.exec(el[1]);
             section.title = url[1];
             section.url = url[2];
-            section.external = (!!url[2].match(/^\w+:\/\//));
         }else{
             section.title = el[1];
         }

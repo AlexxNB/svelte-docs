@@ -1,14 +1,11 @@
 <script>    
     export let section = {};
+    export let active = false;
 </script>
 
 
 {#if section.url}
-    {#if section.external}
-        <a href={section.url} target="_blank">{section.title}</a>
-    {:else}
-        <a href={section.url}>{section.title}</a>
-    {/if}
+    <a href={section.url} class:active>{section.title}</a>
 {:else}
     <span>{section.title}</span>
 {/if}
