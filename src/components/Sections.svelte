@@ -2,8 +2,6 @@
     import {url} from './../../sys/navigation'
     import sections from 'pages_sections.js';
     import Section from './Section.svelte';
-
-    $: console.log($url);
 </script>
 
 <ul>
