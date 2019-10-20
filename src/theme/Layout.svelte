@@ -11,6 +11,7 @@
 </header>
 
 <!-- side bar -->
+<span class="showSidebar" tabindex="0"/>
 <nav>
 	<Sections />
 </nav> 

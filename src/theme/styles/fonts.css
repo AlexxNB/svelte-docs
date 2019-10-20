@@ -2,6 +2,18 @@
 @font-face {
 	font-family: 'Overpass';
 	font-style: normal;
+	font-weight: 300;
+	font-display: fallback;
+	src:
+		local('Overpass Light '),
+		local('Overpass-Light'),
+		url('/theme/fonts/overpass-300.woff2') format('woff2');
+}
+
+/* overpass-400normal */
+@font-face {
+	font-family: 'Overpass';
+	font-style: normal;
 	font-weight: 400;
 	font-display: fallback;
 	src:

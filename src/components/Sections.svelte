@@ -1,0 +1,1 @@
+<a href="/ya.ru">Menu</a>

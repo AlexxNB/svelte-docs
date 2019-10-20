@@ -83,12 +83,51 @@ nav{
 	height:100vh;
 	background-color:var(--secondary);
 	box-shadow: 0 0 15px -5px var(--dark);
+	overflow-x: hidden;
+	transition: .3s;
 }
 
-/* Sidebar navigation */
+
+/* Content */
 main{
 	padding-top:var(--topbar-height);
 	margin-left:var(--sidebar-width);
 	background-color:var(--bg-light);
 	min-height: calc(100vh - var(--topbar-height));
+}
+
+
+/* Responsivity */
+.showSidebar{
+	display:none;
+	position: fixed;
+	bottom: 10px;
+	left: 10px;
+	width:37px;
+	height:37px;
+	z-index: 1;
+	
+	
+	content: url('data:image/svg+xml;utf8,<svg  width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g><path fill="black" d="M19,13H3V11H19L15,7L16.4,5.6L22.8,12L16.4,18.4L15,17L19,13M3,6H13V8H3V6M13,16V18H3V16H13Z" /></g></svg>');
+	border: 1px solid var(--dark);
+	background-color: var(--white);
+}
+
+.showSidebar svg{
+	fill:currentColor;
+}
+
+.showSidebar:focus{
+	content: url('data:image/svg+xml;utf8,<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g><path fill="black" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></g></svg>');
+}
+
+.showSidebar:focus ~ nav {
+    width:var(--sidebar-width);
+}
+
+
+@media (max-width: 600px) {
+	.showSidebar{display:block;}
+	nav {width: 0px;}
+	main{margin-left:0px;}
 }
