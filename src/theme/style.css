@@ -3,19 +3,29 @@
 @import "styles/fonts.css";
 
 :root{
+    --font: "Overpass", sans-serif;
+    --font-mono: "Fira Mono", monospace;
+
     --primary: #ff3e00;
     --secondary: #676778;
     --dark: #34343d;
     --light: #c0c0d8;
 
     --white: #ffffff;
-    --code: #fdf6e3;
+    --code: #f6fafd;
 
     --text: var(--dark);
     --text-sidebar:var(--white);
 
-
     --topbar-height: 50px;
     --sidebar-width: 300px;
+
+    --playground-border: var(--light);
+    --playground-panel: #dbe1e6;
+    --playground-panel-active: var(--light);
+    --playground-code: var(--code);
+    --playground-info: var(--light);
+    --playground-error: #da106e;
+    --playground-warning: #e47e0a;
 }
 

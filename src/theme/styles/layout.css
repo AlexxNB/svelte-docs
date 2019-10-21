@@ -21,7 +21,7 @@ header{
 	line-height:var(--topbar-height);
 	background-color:var(--white);
 	box-shadow: 0 0 15px -5px var(--dark);
-	z-index: 1;
+	z-index: 1001;
 
 	display: flex;
   	flex-wrap: wrap;
@@ -86,6 +86,7 @@ nav{
 	overflow-x: hidden;
 	transition: .3s;
 	transition-delay: .2s;
+	z-index:1000
 }
 
 nav span, nav a{
@@ -145,7 +146,7 @@ main{
 	left: 10px;
 	width:37px;
 	height:37px;
-	z-index: 1;
+	z-index: 1001;
 	content: url('data:image/svg+xml;utf8,<svg  width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g><path fill="black" d="M19,13H3V11H19L15,7L16.4,5.6L22.8,12L16.4,18.4L15,17L19,13M3,6H13V8H3V6M13,16V18H3V16H13Z" /></g></svg>');
 	border: 1px solid var(--dark);
 	background-color: var(--white);

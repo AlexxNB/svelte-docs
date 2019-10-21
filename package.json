@@ -18,14 +18,17 @@
   },
   "dependencies": {
     "node-watch": "^0.6.3",
-    "sirv-cli": "^0.4.4"
+    "sirv-cli": "^0.4.4",
+    "codemirror": "^5.45.0",
+    "sourcemap-codec": "^1.4.4",
+    "yootils": "^0.0.15"
   },
   "scripts": {
     "build": "rollup -c",
     "autobuild": "rollup -c -w",
     "dev": "run-p start:dev start:pagewatch autobuild",
     "start": "sirv public --single",
-    "start:dev": "sirv public --dev",
+    "start:dev": "sirv public --single --dev",
     "start:pagewatch": "node sys/pagewatcher.js"
   }
 }
