@@ -1,4 +1,9 @@
 <script>
+/*
+*  This is official REPL component with some optimizations for this project
+*  https://github.com/sveltejs/svelte-repl
+*/
+
   import { onMount, setContext, createEventDispatcher } from "svelte";
   import { writable } from "svelte/store";
   import SplitPane from "./SplitPane.svelte";
@@ -11,12 +16,11 @@
 
   export let svelteUrl = "https://unpkg.com/svelte";
   export let rollupUrl = "https://unpkg.com/rollup/dist/rollup.browser.js";
-  export let embedded = false;
-  export let orientation = "columns";
   export let relaxed = false;
   export let panel = true;
   export let fixed = false;
-  export let fixedPos = 50;
+  export let result_height = 100;
+  export let editor_height = 70;
   export let injectedJS = "";
   export let injectedCSS = "";
 
@@ -53,7 +57,7 @@
     await module_editor_ready;
     await output_ready;
 
-    injectedCSS = data.css || "";
+    injectedCSS = data.css || '';
     module_editor.set($selected.source, $selected.type);
     output.set($selected, $compile_options);
   }
@@ -216,19 +220,21 @@
   }
 </style>
 
-<div class="container" class:orientation>
+<div class="container">
   <SplitPane
     {fixed}
     {panel}
+    {result_height}
+    {editor_height}
   >
 
     <section slot="b" style="height: 100%;">
-      <Output {svelteUrl} {embedded} {relaxed} {injectedJS} {injectedCSS} />
+      <Output {svelteUrl} {relaxed} {injectedJS} {injectedCSS} />
     </section>
 
     <section slot="a">
       {#if panel}
-        <ComponentSelector {handle_select} {embedded}/>
+        <ComponentSelector {handle_select} />
       {/if}
       <ModuleEditor
         bind:this={input}

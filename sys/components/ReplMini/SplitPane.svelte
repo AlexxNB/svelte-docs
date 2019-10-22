@@ -6,10 +6,10 @@
 
   export let fixed = false;
   export let result_height = 100;
-  export let code_height = 70;
+  export let editor_height = 55;
   export let panel = false;
 
-  if(panel) code_height = code_height+50;
+  if(panel) editor_height = +editor_height+50;
 
   const refs = {};
 
@@ -38,7 +38,7 @@
       top + result_height + 800
     );
     
-    code_height = px - top - result_height;
+    editor_height = px - top - result_height;
 
     dispatch("change");
   }
@@ -131,7 +131,7 @@
     <slot name="b" />
   </div>
 
-  <div class="pane" style="height: {code_height}px;">
+  <div class="pane" style="height: {editor_height}px;">
     <slot name="a" />
   </div>
 
@@ -143,7 +143,7 @@
 
       <div
       class="divider"
-      style="top: {result_height+code_height-20}px;"
+      style="top: {result_height+editor_height-20}px;"
       use:drag={setCodeHeight} />
   {/if}
 

@@ -2,7 +2,6 @@
   import { getContext, createEventDispatcher } from "svelte";
 
   export let handle_select;
-  export let embedded=null;
 
   const { components, selected, request_focus, rebundle } = getContext("REPL");
 
@@ -72,9 +71,8 @@
       type: "svelte",
       source: ""
     };
-
+    
     editing = component;
-
     components.update(components => components.concat(component));
     handle_select(component);
   }
@@ -208,7 +206,7 @@
   }
 </style>
 
-<div class="component-selector" class:embedded>
+<div class="component-selector">
   {#if $components.length}
     <div class="file-tabs" on:dblclick={addNew}>
       {#each $components as component}
@@ -226,7 +224,8 @@
                {editing.name + (/\./.test(editing.name) ? '' : `.${editing.type}`)}
 
             </span>
-
+            
+            <!-- svelte-ignore a11y-autofocus -->
             <input
               autofocus
               spellcheck={false}

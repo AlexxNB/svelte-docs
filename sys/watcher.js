@@ -2,7 +2,11 @@ const path = require('path');
 const touch = require('touch');
 const watch = require('node-watch');
 
-const watch_path = path.resolve('./src/docs');
+const watch_path = [
+    path.resolve('./src/docs'),
+    path.resolve('./src/theme/styles/playground.css'),
+]
+
 const touch_path = path.resolve('./sys/App.svelte');
 
 

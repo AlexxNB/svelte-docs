@@ -107,6 +107,8 @@
 		style.textContent = ${JSON.stringify(injectedCSS)};
 		document.head.appendChild(style);
 	}`;
+
+	$: console.log(styles);
 </script>
 
 <style>

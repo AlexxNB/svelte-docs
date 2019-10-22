@@ -272,6 +272,7 @@
   class:flex
   bind:offsetWidth={w}
   bind:offsetHeight={h}>
+  <!-- svelte-ignore a11y-positive-tabindex -->
   <textarea tabindex="2" bind:this={refs.editor} readonly value={code} />
 
   {#if !CodeMirror}

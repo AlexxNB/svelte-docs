@@ -1,9 +1,13 @@
 <script>
-  import Repl from "./Repl/Repl.svelte";
+  import ReplMini from "./ReplMini/ReplMini.svelte";
   import { onMount } from "svelte";
   let repl;
 
-  export let panel = true;
+  export let panel = false;
+  export let result = 100;
+  export let editor = 70;
+
+
   export let components = [
     {
         type: "svelte",
@@ -26,16 +30,16 @@ components = components.map(cmp => {
 
 <div class="container">
     <div class="repl">
-        <Repl bind:this={repl} 
+        <ReplMini bind:this={repl} 
             {panel}
-            embedded
+            result_height={result}
+            editor_height={editor}
         />
     </div>
 </div>
 
 <style>
     .container{
-        max-width: 70rem;
         margin: 0 auto;
         padding: 1rem 1rem;
     } 

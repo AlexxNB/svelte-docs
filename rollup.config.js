@@ -10,6 +10,8 @@ import globsync from "rollup-plugin-globsync";
 
 import {pagesRoutes} from './sys/rollup_plugin_routes';
 import {pagesSections} from './sys/rollup_plugin_sections';
+import {builtins} from './sys/rollup_plugin_builtins';
+import {builtinsPreprocessor} from './sys/svelte_preprocess_builtins';
 
 
 const production = !process.env.ROLLUP_WATCH;
@@ -25,6 +27,7 @@ export default {
 	plugins: [
 		pagesRoutes(),
 		pagesSections(),
+		builtins(),
 		globsync({
             patterns : ["src/theme/assets/**/*"],
 			dest : "./public/theme",
@@ -34,7 +37,10 @@ export default {
 			dev: !production,
 			emitCss:true,
 			extensions: ['.svelte','.md'],
-			preprocess: markdown()
+			preprocess: [
+				builtinsPreprocessor(),
+				markdown()
+			]
 		}),
 		postcss({
             extract: true,
