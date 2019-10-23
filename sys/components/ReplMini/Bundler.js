@@ -164,12 +164,6 @@ function worker_fn() {
   }
 
   async function bundle({ id, components }) {
-    // console.clear();
-    console.log(
-      `running Svelte compiler version %c${svelte.VERSION}`,
-      "font-weight: bold"
-    );
-
     const lookup = {};
     components.forEach(component => {
       const path = `./${component.name}.${component.type}`;
@@ -202,33 +196,11 @@ function worker_fn() {
         sourcemap: true
       })).output[0];
 
-      const ssr = false // TODO how can we do SSR?
-        ? await get_bundle("ssr", cached.ssr, lookup)
-        : null;
-
-      if (ssr) {
-        cached.ssr = ssr.cache;
-        if (ssr.error) {
-          throw ssr.error;
-        }
-      }
-
-      const ssr_result = ssr
-        ? (await ssr.bundle.generate({
-            format: "iife",
-            name: "SvelteComponent",
-            globals: id => import_map.get(id),
-            exports: "named",
-            sourcemap: true
-          })).output[0]
-        : null;
-
       return {
         id,
         imports: dom_result.imports,
         import_map,
         dom: dom_result,
-        ssr: ssr_result,
         warnings: dom.warnings,
         error: null
       };

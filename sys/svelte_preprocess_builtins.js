@@ -88,13 +88,14 @@ function replaceBuiltins(text){
 
       let used_str = used.map(cmp => `import {${cmp}} from 'svelte-docs';`).join("\n");
       
-      if(text.search(/^[\t ]*<script>/))
+      if(/^[\t ]*<script>/.test(text))
         text = text.replace(/^[\t ]*<script>/,"$&\n"+used_str);
-      else if(text.search(/^[\t ]*import .+ from .+$/))
+      else if(/^[\t ]*import .+ from .+$/.test(text))
         text = text.replace(/^[\t ]*import .+ from .+$/,"$&\n"+used_str);
-      else if(text.search(/^[\t ]*import .+ from .+$/))
+      else
         text = used_str+"\n"+text;
     }
+    
     return text;
 }
 
