@@ -1,14 +1,14 @@
-
+import {markdown} from 'svelte-preprocess-markdown';
 
 export default {
     //basepath
     
     incPKG:{
         // Virtual packages in Examples
-        // <virtual_package_name>: <local_path>
+        // <virtual_package_name>: <local_path>,
         //
         // Ex1: './Button.svelte': './../dist/Button.svelte',
-        // Ex2: 'mylib': './../dist/index.js', (don't miss `.js` at the end!)
+        // Ex2: 'mylib': './../dist/index.js', (don't miss `index` and `.js` at the end!)
         //
         //  Then you can use in Example:
         //  import Button from './Button.svelte';
@@ -29,7 +29,7 @@ export default {
     ],
     
     preprocess: [
-
+        markdown({filetype: 'svelte'})
     ]
 
 }

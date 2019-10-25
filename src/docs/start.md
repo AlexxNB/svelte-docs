@@ -1,17 +1,9 @@
 # Welcome
 
-```example script:hide style:hide
-<script>
-    import {Button} from 'mylib';
-    let name = 'World';
-</script>
-<h1>Hello {name}!</h1>
-<Button />
-<style>
-h1{
-    color:red !important;
-}
-</style>
+```example lang:markdown
+# Hello !
+
+**hello**
 ```
 
 ```example

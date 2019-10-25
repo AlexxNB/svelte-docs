@@ -13,6 +13,7 @@ import {pagesSections} from './sys/rollup_plugin_sections';
 import {builtins} from './sys/rollup_plugin_builtins';
 import {incpkg} from './sys/rollup_plugin_incpkg';
 import {builtinsPreprocessor} from './sys/svelte_preprocess_builtins';
+import config from './config';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -78,7 +79,7 @@ export default [{
 			dev: production,
 			emitCss:true,
 			extensions: ['.svelte'],
-			preprocess: []
+			preprocess: config.preprocess
 		}),
 		postcss({
             extract: true,
