@@ -74,6 +74,15 @@ const highlight = (text,lang) => {
 
 const  example_replacer = (content,params,name) => () => {
   fs.writeFileSync(path.join(EX_DIR,`${name}.svelte`), content);
+
+  if(params.script && params.script === 'hide'){
+    content = content.replace(/^[\t ]*<script>[\S\s]*?<\/script>\n?/m,'');
+  }
+
+  if(params.style && params.style === 'hide'){
+    content = content.replace(/^[\t ]*<style.*>[\S\s]*?<\/style>\n?/m,'');
+  }
+
   return `<Example name="${name}" code={"${highlight(content,params.lang)}"}/>`;
 }
 
@@ -138,38 +147,3 @@ const getProps = function (str) {
 
   return {type,params}
 }
-
-
-
-
-
-
-
-
-
-/*
-const  playground_replacer = (content,params) => () => {
-  let components = getBlocks(content);
-  if(components.length === 0) components = [{type:'App.svelte',content}];
-  components = components.map(comp => {
-    let fileinfo = comp.type.split('.');
-    if(fileinfo.length === 1) fileinfo.push('svelte');
-
-    return {
-        type: fileinfo.pop(),
-        name: fileinfo.join('.'),
-        source: comp.content
-    }
-  });
-
-  let attributes = Object.keys(params).reduce((arr,param) => {
-      if(params[param] !== null) 
-        return [...arr,`${param}="${params[param]}"`];
-      else
-        return [...arr,`${param}`];
-  },[]);
-
-  attributes.push('components={'+JSON.stringify(components)+'}')
-
-  return `<Playground ${attributes.join(' ')} />`
-}*/

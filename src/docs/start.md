@@ -1,6 +1,6 @@
 # Welcome
 
-```example
+```example script:hide style:hide
 <script>
     import {Button} from 'mylib';
     let name = 'World';
@@ -9,7 +9,7 @@
 <Button />
 <style>
 h1{
-    color:red;
+    color:red !important;
 }
 </style>
 ```
