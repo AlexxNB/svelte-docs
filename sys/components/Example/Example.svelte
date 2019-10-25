@@ -35,7 +35,7 @@
 
 </script>
 
-<div class="container">
+<div class="example">
     <div class="result">
         <iframe
             on:load={sendMessage}
@@ -53,18 +53,10 @@
 </div>
 
 <style>
-    .container{
+    .example{
         position:relative;
-        width:calc(100vw - 50px);
-        margin:0 25px;
-        border:1px solid var(--example-border);
     }
-
-    .code{
-		/*border-bottom:1px solid transparent;*/
-        border-top: 1px solid var(--example-border);
-	}
-	
+    
 	pre{margin:0px;}
 
     iframe{

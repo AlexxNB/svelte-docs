@@ -92,7 +92,7 @@ nav{
 nav span, nav a{
 	color: var(--text-sidebar);
 	white-space: nowrap;
-	font-size:1.2em;
+	font-size:1.1em;
 	opacity: .75;
 	transition: .2s;
 }
@@ -136,6 +136,17 @@ main{
 	background-color:var(--bg-light);
 	min-height: calc(100vh - var(--topbar-height));
 }
+
+/* Example block */
+.example{
+	border:1px solid var(--example-border);
+	margin:25px;
+}
+
+/* .example > .result{} */
+ .example > .code{
+	border-top:1px solid var(--example-border);
+ } 
 
 
 /* Responsivity */
