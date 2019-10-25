@@ -1,28 +1,36 @@
-import {Playground} from 'svelte-docs';
-
 # Welcome
 
-```playground editor:100 result:150
-    ```App.svelte
-        <h1>Two components!</h1>
-    ```
-    ```Child.svelte
-        <h1>Child components</h1>
-    ```
+```example
+<script>
+    import {Button} from 'mylib';
+    let name = 'World';
+</script>
+<h1>Hello {name}!</h1>
+<Button />
+<style>
+h1{
+    color:red;
+}
+</style>
 ```
 
-```playground
-    <script>
-        let Hello="bue";
-    </script>
-    <h1>Just one component</h1>
-    <button>
-        {Hello}
-    </button>
+```example
+<script>
+    // test
+    import Button from './Button.svelte';
+    import { slide } from 'svelte/transition';
+    let name = 'NewWorld';
+    let show = false;
+</script>
+<button on:click={e => show = !show}>downdrop</button>
+{#if show}
+    <div transition:slide>
+        <h1>Buy {name}!</h1>
+        <h1>Buy {name}!</h1>
+        <h1>Buy {name}!</h1>
+        <h1>Buy {name}!</h1>
+        <h1>Buy {name}!</h1>
+    </div>
+{/if}
 ```
 
-
-
-```js
-    console.log(123);
-```

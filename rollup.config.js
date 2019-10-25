@@ -11,12 +11,12 @@ import globsync from "rollup-plugin-globsync";
 import {pagesRoutes} from './sys/rollup_plugin_routes';
 import {pagesSections} from './sys/rollup_plugin_sections';
 import {builtins} from './sys/rollup_plugin_builtins';
+import {incpkg} from './sys/rollup_plugin_incpkg';
 import {builtinsPreprocessor} from './sys/svelte_preprocess_builtins';
-
 
 const production = !process.env.ROLLUP_WATCH;
 
-export default {
+export default [{
 	input: 'sys/main.js',
 	output: {
 		sourcemap: true,
@@ -59,6 +59,43 @@ export default {
 		production && terser()
 	],
 	watch: {
-		clearScreen: false
+		clearScreen: false,
+		exclude: 'sys/_examples'
 	}
-};
+},
+// Examples bundle
+{
+	input: './sys/_examples/list.js',
+	output: {
+		sourcemap: false,
+		format: 'iife',
+		name: 'app',
+		file: 'public/examples.js'
+	},
+	plugins: [
+		incpkg(),
+		svelte({
+			dev: production,
+			emitCss:true,
+			extensions: ['.svelte'],
+			preprocess: []
+		}),
+		postcss({
+            extract: true,
+            minimize: production,
+			sourceMap: false,
+			plugins:[
+				postcssImport()
+			]
+        }),
+		resolve({
+			browser: true,
+			dedupe: importee => importee === 'svelte' || importee.startsWith('svelte/')
+		}),
+		commonjs(),
+		production && terser()
+	],
+	watch: {
+		exclude: './sys/_examples/*.svelte'
+	}
+}];

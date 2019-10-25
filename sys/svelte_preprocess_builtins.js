@@ -1,16 +1,83 @@
+import fs from 'fs-extra';
+import path from 'path';
+import hljs from 'highlight.js';
+import hasha from 'hasha';
+import { EX_DIR } from './constants';
+
 export function builtinsPreprocessor() {
     
     return {
         markup({ content, filename }) {
-            
+          
             if(filename.endsWith('.md')){
-                content = replaceBuiltins(content);
+                content = replaceBuiltins(content,filename);
             }
 
             return { code: content };
         }
     };
 }
+
+
+function replaceBuiltins(text,filename){
+  let used = []; 
+  let uid = 0;
+
+  //current file identificator
+  const fid = hasha(path.relative('./src/docs',filename).replace(/[\/.]/g,'_'),{algorithm: 'md5'});
+  
+  //remve all examples by file id
+  fs.readdirSync(EX_DIR).forEach(file => {
+    let r = /Ex_\d+_([a-f0-9]{32})\.svelte/.exec(file);
+    if(r && r[1] === fid)  fs.removeSync(path.join(EX_DIR,file));
+  })
+  
+   
+  // parse blocks in the file
+  getBlocks(text).forEach(block => {
+    
+    if(block.type === 'example') {
+      if(used.indexOf('Example') === -1) used.push('Example');
+      let name = `Ex_${uid++}_${fid}`;
+      text = text.replace(block.fragment,example_replacer(block.content,block.params,name))
+    }
+
+  });
+  
+  if(used.length > 0){
+
+    let used_str = `import { ${used.join(',')} } from 'svelte-docs-builtins';`
+
+    if(/^[\t ]*<script>/.test(text))
+      text = text.replace(/^[\t ]*<script>/,"$&\n"+used_str);
+    else if(/^[\t ]*import .+ from .+$/.test(text))
+      text = text.replace(/^[\t ]*import .+ from .+$/,used_str+"\n$&");
+    else
+      text = used_str+"\n"+text;
+      
+  }
+  
+  return text;
+}
+
+const highlight = (text,lang) => {
+  lang = lang || 'xml';
+  
+  const result = hljs.highlight(lang,text);
+
+  return result.value
+          .replace(/{/g,'&#123;')
+          .replace(/}/g,'&#125;')
+          .replace(/"/g,'\\"')
+          .replace(/\n/g,'\\n');
+}
+
+const  example_replacer = (content,params,name) => () => {
+  fs.writeFileSync(path.join(EX_DIR,`${name}.svelte`), content);
+  return `<Example name="${name}" code={"${highlight(content,params.lang)}"}/>`;
+}
+
+
 
 
 function getBlocks (text) {
@@ -74,30 +141,13 @@ const getProps = function (str) {
 
 
 
-function replaceBuiltins(text){
-    let used = [];
 
-    getBlocks(text).forEach(block => {
-      if(block.type === 'playground') {
-        if(used.indexOf('Playground') === -1) used.push('Playground');
-        text = text.replace(block.fragment,playground_replacer(block.content,block.params))
-      }
-    });
 
-    if(used.length > 0){
 
-      let used_str = used.map(cmp => `import {${cmp}} from 'svelte-docs';`).join("\n");
-      
-      if(text.search(/^[\t ]*<script>/))
-        text = text.replace(/^[\t ]*<script>/,"$&\n"+used_str);
-      else if(text.search(/^[\t ]*import .+ from .+$/))
-        text = text.replace(/^[\t ]*import .+ from .+$/,"$&\n"+used_str);
-      else if(text.search(/^[\t ]*import .+ from .+$/))
-        text = used_str+"\n"+text;
-    }
-    return text;
-}
 
+
+
+/*
 const  playground_replacer = (content,params) => () => {
   let components = getBlocks(content);
   if(components.length === 0) components = [{type:'App.svelte',content}];
@@ -122,4 +172,4 @@ const  playground_replacer = (content,params) => () => {
   attributes.push('components={'+JSON.stringify(components)+'}')
 
   return `<Playground ${attributes.join(' ')} />`
-}
+}*/
