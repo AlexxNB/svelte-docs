@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
 import path from 'path';
-import { BUILTIN_PKG,CMP_EXAMPLE,EX_DIR,EX_LIST } from './constants';
+import { BUILTIN_PKG,CMP_EXAMPLE,EX_DIR,EX_LIST,EX_CSS } from './constants';
 import { ERR } from './utils.js';
 import config from './../config';
 
@@ -27,7 +27,7 @@ export function builtins() {
         writeBundle() { 
             
             fs.writeFileSync(EX_LIST, `import '${path.resolve('./sys/components/Example/iframe.js')}';\n`);
-
+            fs.appendFileSync(EX_LIST, `import '${EX_CSS}';\n`);
             config.incCSS.forEach(csspath => {
                 csspath = path.resolve(csspath);
                 if (!fs.existsSync(csspath)) ERR('Config.incCSS: No such file',csspath);

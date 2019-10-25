@@ -11,14 +11,14 @@
     let iframe_height = 70;
 
     const srcdoc = `<!doctype html>
-<html>
+<html style="height: auto !important">
     <head>
         <meta charset='utf-8'>
         <base href="/" />
         <link rel='stylesheet' href='examples.css'>
         <scr`+`ipt defer src='examples.js'></scr`+`ipt>
     </head>
-    <body></body>
+    <body style="height: auto !important"></body>
 </html>`;
 
     const sendMessage = function(){

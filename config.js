@@ -13,9 +13,6 @@ export default {
         //  Then you can use in Example:
         //  import Button from './Button.svelte';
         //  import { Input } from 'mylib';
-        
-        './Button.svelte': './mylib/Button.svelte',
-                  'mylib': './mylib/index.js',
     },
 
     incCSS: [
@@ -24,12 +21,16 @@ export default {
         //
         // Ex1: './mylib/theme.css',
         // Ex2: './node_modules/chota/chota.css,
-
-        './mylib/theme.css'
     ],
     
     preprocess: [
-        markdown({filetype: 'svelte'})
+        // preprocessors for Svelte if needed
+        // syntax same as for `preprocessor` option in `rollup-plugin-svelte`
+        // Ex:  Import preprocessor at top of the config file:
+        //          import {markdown} from 'svelte-preprocess-markdown';
+        //      Then add it here:
+        //          markdown({filetype: 'svelte'}),
+
     ]
 
 }
