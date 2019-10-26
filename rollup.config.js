@@ -15,7 +15,7 @@ import {example_component,incpkg} from './sys/builtins/rollup_plugin_examples';
 import {examples_sources,examples_index} from './sys/builtins/rollup_plugin_examples';
 import {builtins} from './sys/builtins/svelte_preprocess_builtins';
 
-import {DEVPATH,BUILDPATH,EX_INDEX} from './sys/constants';
+import {DEVPATH,BUILDPATH,EX_INDEX,DOCROOT} from './sys/constants';
 import config from './config';
 
 const production = !process.env.ROLLUP_WATCH;
@@ -66,6 +66,7 @@ export default [{
 	],
 	watch: {
 		clearScreen: false,
+		exclude: [DOCROOT+'/**']
 	}
 },
 // Examples bundle

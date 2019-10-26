@@ -10,5 +10,5 @@ const touch_path = path.resolve('./sys/App.svelte');
 
 
 watch(watch_path, { recursive: true }, function(evt, name) {
-  //  touch(touch_path);
+    touch(touch_path);
 });
