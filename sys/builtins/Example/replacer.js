@@ -1,4 +1,4 @@
-import hljs from 'highlight.js';
+import highlight from './../../highlight';
 import { ExamplesStore } from './../../stores';
 
 export default (content,params,name) => () => {
@@ -12,17 +12,7 @@ export default (content,params,name) => () => {
       content = content.replace(/^[\t ]*<style.*>[\S\s]*?<\/style>\n?/m,'');
     }
   
-    return `<Example name="${name}" code={"${highlight(content,params.lang)}"}/>`;
+    return `<Example name="${name}" code={"${highlight(content,params.lang,true)}"}/>`;
   }
 
-  function highlight (text,lang) {
-    lang = lang || 'xml';
-    
-    const result = hljs.highlight(lang,text);
   
-    return result.value
-            .replace(/{/g,'&#123;')
-            .replace(/}/g,'&#125;')
-            .replace(/"/g,'\\"')
-            .replace(/\n/g,'\\n');
-  }

@@ -101,6 +101,7 @@ nav ul,nav ul li{
 	display: block;
 	padding:0px;
 	margin:0px;
+	margin-bottom: .8em;
 }
 
 nav ul{
@@ -108,11 +109,13 @@ nav ul{
 }
 
 nav ul li ul{
-	padding:0 0 0 2em;
+	padding:0 0 0 1em;
 }
 
 nav ul li span,nav ul li a{
 	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-size:.9em;
 	font-weight:600;
 }
 
@@ -121,11 +124,13 @@ nav ul li a:hover, nav ul li a.active{
 }
 nav ul li a.active::after {
 	float:right;
-	content: "→";
+	content: url('data:image/svg+xml;utf8,<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g><path fill="white" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></g></svg>');
 }
 
 nav ul li ul span,nav ul li ul a{
 	text-transform: initial;
+	font-size:1rem;
+	letter-spacing: 0.05em;
 	font-weight:400;
 }
 

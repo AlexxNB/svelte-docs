@@ -1,13 +1,14 @@
 # It is about
 
-```properties
-show | Showing something or hide it | bool/number(true)
-type | Type of the button | 'success','error','warning'('success')
-type | Type of the button | bool/'success','error','warning'('success')
-name | The name of the component | string 
-name | The name of the component 
+```js
+console.log('hello');
+console.log('hello again');
+```
+
+```html
+<h1>Hello!</h1>
 ```
 
 ```example
-<h1>About!</h1>
+<h1>Hello!</h1>
 ```

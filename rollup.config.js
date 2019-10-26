@@ -16,6 +16,7 @@ import {examples_sources,examples_index} from './sys/builtins/rollup_plugin_exam
 import {builtins} from './sys/builtins/svelte_preprocess_builtins';
 
 import {DEVPATH,BUILDPATH,EX_INDEX,DOCROOT} from './sys/constants';
+import highlight from './sys/highlight';
 import config from './config';
 
 const production = !process.env.ROLLUP_WATCH;
@@ -41,7 +42,7 @@ export default [{
 			extensions: ['.svelte','.md'],
 			preprocess: [
 				builtins(),
-				markdown()
+				markdown({highlight})
 			]
 		}),
 		postcss({
