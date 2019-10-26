@@ -4,6 +4,7 @@ const watch = require('node-watch');
 
 const watch_path = [
     path.resolve('./src/docs'),
+    path.resolve('./src/theme/assets'),
 ]
 
 const touch_path = path.resolve('./sys/App.svelte');

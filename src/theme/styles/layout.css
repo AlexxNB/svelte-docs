@@ -92,7 +92,7 @@ nav{
 nav span, nav a{
 	color: var(--text-sidebar);
 	white-space: nowrap;
-	font-size:1.1em;
+	font-size:1em;
 	opacity: .75;
 	transition: .2s;
 }
@@ -135,6 +135,7 @@ main{
 	margin-left:var(--sidebar-width);
 	background-color:var(--bg-light);
 	min-height: calc(100vh - var(--topbar-height));
+	max-width:70em;
 }
 
 article{
@@ -244,10 +245,13 @@ article{
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
 	.showSidebar{display:block;}
 	nav {width: 0px;}
-	main{margin-left:0px;}
+	main{
+		margin-left:0px;
+		max-width: 100%;
+	}
 	article{
 		padding:0 1em;
 	}

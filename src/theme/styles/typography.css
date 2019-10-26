@@ -48,3 +48,25 @@ button:active {
 button:focus {
 	border-color: #666;
 }
+
+code{
+	font-family: var(--font-mono);
+	background: var(--code);
+	border: 1px solid var(--light);
+	color: var(--secondary);
+	padding: .2em;
+	border-radius: .2em;
+}
+
+blockquote {
+	background-color: var(--code);
+	padding: 1rem 2rem;
+	border-left: 3px solid var(--light);
+}
+
+img {
+	display: block;
+    max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+}

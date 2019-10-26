@@ -19,7 +19,7 @@
 	src:
 		local('Overpass Light '),
 		local('Overpass-Light'),
-		url('theme/fonts/overpass-400.woff2') format('woff2');
+		url('assets/fonts/overpass-400.woff2') format('woff2');
 }
 
 /* overpass-600normal */
@@ -31,7 +31,7 @@
 	src:
 		local('Overpass Bold '),
 		local('Overpass-Bold'),
-		url('theme/fonts/overpass-600.woff2') format('woff2');
+		url('assets/fonts/overpass-600.woff2') format('woff2');
 }
 
 /* fira-mono-400normal */
@@ -43,5 +43,5 @@
 	src:
 		local('Fira Mono'),
 		local('Fira-Mono'),
-		url('theme/fonts/fira-mono-400.woff2') format('woff2');
+		url('assets/fonts/fira-mono-400.woff2') format('woff2');
 }

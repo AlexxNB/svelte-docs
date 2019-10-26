@@ -7,9 +7,9 @@ import { terser } from 'rollup-plugin-terser';
 import {markdown} from 'svelte-preprocess-markdown';
 import postcss from 'rollup-plugin-postcss';
 import postcssImport from 'postcss-import';
-import globsync from "rollup-plugin-globsync";
 
 import indexer from './sys/indexer/rollup_plugin_indexer';
+import syncer from './sys/syncer/rollup_plugin_syncer';
 import {pages} from './sys/pages/rollup_plugin_pages';
 import {example_component,incpkg} from './sys/builtins/rollup_plugin_examples';
 import {examples_sources,examples_index} from './sys/builtins/rollup_plugin_examples';
@@ -32,13 +32,9 @@ export default [{
 	},
 	plugins: [
 		indexer(!production),
+		syncer(!production),
 		pages(),
 		example_component(),
-		globsync({
-            patterns : ["src/theme/assets/**/*"],
-			dest : path.join(DIR,'theme'),
-			options: {transform: file => file.replace('src/theme/assets/','')}
-        }),
 		svelte({
 			dev: !production,
 			emitCss:true,

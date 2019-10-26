@@ -11,7 +11,7 @@ export default function (dev=false) {
         generateBundle(opts, bundle) { 
             const dir = opts.dir || path.dirname(opts.file);
 
-            fs.writeFileSync(path.join(dir,'index.html'),getTemplate());
+            fs.outputFileSync(path.join(dir,'index.html'),getTemplate());
 
             if(!dev) goTree(PAGES);               
         }
