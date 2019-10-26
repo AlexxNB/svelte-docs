@@ -1,3 +1,4 @@
+import path from 'path';
 import svelte from 'rollup-plugin-svelte';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
@@ -8,19 +9,18 @@ import postcss from 'rollup-plugin-postcss';
 import postcssImport from 'postcss-import';
 import globsync from "rollup-plugin-globsync";
 
+import indexer from './sys/indexer/rollup_plugin_indexer';
 import {pages} from './sys/pages/rollup_plugin_pages';
-
-import { 	example_component, 
-			examples_sources, 
-			examples_index, 
-			incpkg
-		} from './sys/builtins/rollup_plugin_examples';
-
+import {example_component,incpkg} from './sys/builtins/rollup_plugin_examples';
+import {examples_sources,examples_index} from './sys/builtins/rollup_plugin_examples';
 import {builtins} from './sys/builtins/svelte_preprocess_builtins';
 
+import {DEVPATH,BUILDPATH,EX_INDEX} from './sys/constants';
 import config from './config';
 
 const production = !process.env.ROLLUP_WATCH;
+
+const DIR = production ? BUILDPATH : DEVPATH
 
 export default [{
 	input: 'sys/main.js',
@@ -28,14 +28,15 @@ export default [{
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: 'public/bundle.js'
+		file: path.join(DIR,'bundle.js')
 	},
 	plugins: [
+		indexer(),
 		pages(),
 		example_component(),
 		globsync({
             patterns : ["src/theme/assets/**/*"],
-			dest : "./public/theme",
+			dest : path.join(DIR,'theme'),
 			options: {transform: file => file.replace('src/theme/assets/','')}
         }),
 		svelte({
@@ -60,7 +61,7 @@ export default [{
 			dedupe: importee => importee === 'svelte' || importee.startsWith('svelte/')
 		}),
 		commonjs(),
-		!production && livereload('public'),
+		!production && livereload(DIR),
 		production && terser()
 	],
 	watch: {
@@ -69,12 +70,12 @@ export default [{
 },
 // Examples bundle
 {
-	input: 'sys/examples.main.js',
+	input: EX_INDEX,
 	output: {
 		sourcemap: false,
 		format: 'iife',
 		name: 'app',
-		file: 'public/examples.js'
+		file: path.join(DIR,'examples.js')
 	},
 	plugins: [
 		incpkg(),
