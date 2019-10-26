@@ -1,8 +1,8 @@
 <script>
 	// import page components
-	import Topbar from './../components/Topbar.svelte';
-	import Sections from './../components/Sections.svelte';
-	import Document from './../components/Document.svelte';
+	import Topbar from './Topbar.svelte';
+	import Sections from './Sections.svelte';
+	import Document from './Document.svelte';
 </script>
 
 <!-- top bar -->

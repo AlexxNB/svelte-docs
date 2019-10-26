@@ -10,9 +10,15 @@ import globsync from "rollup-plugin-globsync";
 
 import {pagesRoutes} from './sys/rollup_plugin_routes';
 import {pagesSections} from './sys/rollup_plugin_sections';
-import {builtins} from './sys/rollup_plugin_builtins';
-import {incpkg} from './sys/rollup_plugin_incpkg';
-import {builtinsPreprocessor} from './sys/svelte_preprocess_builtins';
+
+import { 	example_component, 
+			examples_sources, 
+			examples_index, 
+			incpkg
+		} from './sys/builtins/rollup_plugin_examples';
+
+import {builtinsPreprocessor} from './sys/builtins/svelte_preprocess_builtins';
+
 import config from './config';
 
 const production = !process.env.ROLLUP_WATCH;
@@ -28,7 +34,7 @@ export default [{
 	plugins: [
 		pagesRoutes(),
 		pagesSections(),
-		builtins(),
+		example_component(),
 		globsync({
             patterns : ["src/theme/assets/**/*"],
 			dest : "./public/theme",
@@ -61,12 +67,11 @@ export default [{
 	],
 	watch: {
 		clearScreen: false,
-		exclude: 'sys/_examples'
 	}
 },
 // Examples bundle
 {
-	input: './sys/_examples/list.js',
+	input: 'sys/examples.main.js',
 	output: {
 		sourcemap: false,
 		format: 'iife',
@@ -75,6 +80,8 @@ export default [{
 	},
 	plugins: [
 		incpkg(),
+		examples_index(),
+		examples_sources(),
 		svelte({
 			dev: production,
 			emitCss:true,
@@ -97,6 +104,6 @@ export default [{
 		production && terser()
 	],
 	watch: {
-		exclude: './sys/_examples/*.svelte'
+		clearScreen: false,
 	}
 }];

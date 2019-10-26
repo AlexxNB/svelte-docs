@@ -1,7 +1,7 @@
 <script>
 	// import theme
 	import './../src/theme/style.css';
-	import Layout from './../src/theme/Layout.svelte';
+	import Layout from './../src/components/Layout.svelte';
 	import {initNavigation} from './navigation.js';
 	import {onMount} from 'svelte';
 
