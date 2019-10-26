@@ -8,8 +8,7 @@ import postcss from 'rollup-plugin-postcss';
 import postcssImport from 'postcss-import';
 import globsync from "rollup-plugin-globsync";
 
-import {pagesRoutes} from './sys/rollup_plugin_routes';
-import {pagesSections} from './sys/rollup_plugin_sections';
+import {pages} from './sys/pages/rollup_plugin_pages';
 
 import { 	example_component, 
 			examples_sources, 
@@ -32,8 +31,7 @@ export default [{
 		file: 'public/bundle.js'
 	},
 	plugins: [
-		pagesRoutes(),
-		pagesSections(),
+		pages(),
 		example_component(),
 		globsync({
             patterns : ["src/theme/assets/**/*"],

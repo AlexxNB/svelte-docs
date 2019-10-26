@@ -1,9 +1,21 @@
 import path from 'path';
 import fs from 'fs';
 
-const FILE = 'pages_routes.js'
+import {PAGES,STARTPAGE} from './../constants';
 
-const root = path.resolve('./src/docs/pages');
+
+export default function () {
+    const pages = getRoutes(PAGES);
+
+    const strImports = pages.map(item =>`import ${item.component} from '${item.path}'`).join(";\n");
+    const strRoutes = pages.map(item =>`"${item.route}": ${item.component}`).join(",\n");
+
+    return `${strImports}
+    
+    export default {
+        ${strRoutes}
+    }`;
+}
 
 function getRoutes(dir,slug='') {
     slug = `${slug}/`;
@@ -12,7 +24,7 @@ function getRoutes(dir,slug='') {
     if(slug==='/') pages.push({
         component:'Startpage',
         route:'/',
-        path:path.join(root,'..','start.md')
+        path:STARTPAGE
     });
 
     fs.readdirSync(dir).forEach( file => {
@@ -54,26 +66,4 @@ function formatComponentName(text){
 
 function formatSlug(text){
     return text.replace(/[^\w\d\-]/g,'-');
-}
-
-function getRoutesObjectStr() {
-    const pages = getRoutes(root);
-
-    const strImports = pages.map(item =>`import ${item.component} from '${item.path}'`).join(";\n");
-    const strRoutes = pages.map(item =>`"${item.route}": ${item.component}`).join(",\n");
-
-    return `${strImports}
-    
-    export default {
-        ${strRoutes}
-    }`;
-}
-
-export function pagesRoutes() {
-    return {
-        name: 'rollup_plugin_routes',
-
-        resolveId(id) { return id === FILE ? id : null },
-        load(id) { return id === FILE ? getRoutesObjectStr() : null }
-    }
 }

@@ -1,19 +1,7 @@
-import path from 'path';
 import fs from 'fs';
+import {SECTIONS} from './../constants'
 
-const FILE = 'pages_sections.js'
-const SECTIONS = path.resolve('./src/docs/sections.md');
-
-export function pagesSections() {
-    return {
-        name: 'rollup_plugin_sections',
-
-        resolveId(id) { return id === FILE ? id : null },
-        load(id) { return id === FILE ? getSections() : null }
-    }
-}
-
-function getSections() {
+export default function() {
     let sections = [];
 
     const source = fs.readFileSync(SECTIONS,{encoding: 'utf-8'});
