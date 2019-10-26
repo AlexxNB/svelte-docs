@@ -29,8 +29,8 @@
     "build": "rollup -c",
     "autobuild": "rollup -c -w",
     "dev": "run-p start:dev start:pagewatch autobuild",
-    "start": "sirv public --single",
-    "start:dev": "sirv public --single --dev",
+    "start": "sirv __DOCS__/dist",
+    "start:dev": "sirv __DOCS__/dev --single --dev",
     "start:pagewatch": "node sys/watcher.js"
   }
 }

@@ -25,13 +25,13 @@ const DIR = production ? BUILDPATH : DEVPATH
 export default [{
 	input: 'sys/main.js',
 	output: {
-		sourcemap: true,
+		sourcemap: !production,
 		format: 'iife',
 		name: 'app',
 		file: path.join(DIR,'bundle.js')
 	},
 	plugins: [
-		indexer(),
+		indexer(!production),
 		pages(),
 		example_component(),
 		globsync({

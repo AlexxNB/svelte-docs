@@ -1,5 +1,9 @@
 export default {
-    //basepath
+    // if you will serve docs in subderictory use '/subdir/'
+    basepath: '/',
+
+    // page title
+    title: 'Svelte thing Documentation',
     
     pathes: {
         // directory for files, generated in development mode 
