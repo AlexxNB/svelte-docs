@@ -1,5 +1,7 @@
 let STORES = {};
 
+export const ExamplesStore = init_store();
+
 function init_store() {
     const id = {};
     STORES[id] = {};
@@ -40,4 +42,4 @@ function init_store() {
     }
 }
 
-export const ExamplesStore = init_store();
+

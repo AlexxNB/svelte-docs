@@ -1,7 +1,13 @@
-import {markdown} from 'svelte-preprocess-markdown';
-
 export default {
     //basepath
+    
+    pathes: {
+        // directory for files, generated in development mode 
+        dev: '__DOCS__/dev',
+
+        // directory for builted documentaton
+        build: '__DOCS__/dist',
+    },
     
     incPKG:{
         // Virtual packages in Examples
@@ -26,7 +32,7 @@ export default {
     
     preprocess: [
         // preprocessors for Svelte if needed
-        // syntax same as for `preprocessor` option in `rollup-plugin-svelte`
+        // syntax same as for `preprocess` option in `rollup-plugin-svelte`
         // Ex:  Import preprocessor at top of the config file:
         //          import {markdown} from 'svelte-preprocess-markdown';
         //      Then add it here:

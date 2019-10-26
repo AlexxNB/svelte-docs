@@ -1,6 +1,7 @@
 import path from 'path';
 
-
+export const DEVPATH = path.resolve('./__DOCS__/dev');
+export const BUILDPATH = path.resolve('./__DOCS__/dist');
 export const DOCROOT = path.resolve('./src/docs');
 export const PAGES = path.join(DOCROOT,'pages');
 export const SECTIONS = path.join(DOCROOT,'sections.md');
