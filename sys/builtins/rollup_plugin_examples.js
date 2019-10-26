@@ -1,17 +1,21 @@
 import path from 'path';
 import fs from 'fs';
-import { EX_CSS,EX_IFRAME,EX_CMP } from './../constants';
+import { EX_CSS,EX_IFRAME,EX_CMP, EX_LAYOUT } from './../constants';
 import { ExamplesStore } from './../stores';
 import { ERR } from './../utils.js';
 import config from './../../config';
 
+const components = {
+    "BuiltinExample.js": `export {default} from '${EX_CMP}';`,
+    "ExampleLayout.js": `export {default} from '${EX_LAYOUT}';`,
+}
 
 export function example_component() {
     return {
         name: 'rollup_plugin_builtins',
-        resolveId(id) { return id === 'BuiltinExample.js' ? id : null },
+        resolveId(id) { return components[id] !== undefined ? id : null },
         load(id) { 
-            if(id === 'BuiltinExample.js') return `export {default} from '${EX_CMP}';`; 
+            if(components[id] !== undefined) return components[id]; 
             return null;
         }
     }

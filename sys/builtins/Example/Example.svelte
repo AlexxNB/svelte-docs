@@ -3,6 +3,8 @@
 </script>
 
 <script>    
+    import ExampleLayout from 'ExampleLayout.js';
+
     export let name;
     export let code;
 
@@ -35,28 +37,21 @@
 
 </script>
 
-<div class="example">
-    <div class="result">
-        <iframe
-            on:load={sendMessage}
-            style="height:{iframe_height}px"
-            title="Result"
-			scrolling="no"
-            bind:this={iframe}
-            sandbox="allow-popups-to-escape-sandbox allow-scripts allow-popups allow-forms allow-pointer-lock allow-top-navigation allow-modals allow-scripts"
-            {srcdoc}
-        ></iframe>
-    </div>
-    <div class="code">
-        <pre class="hljs"><code>{@html code.trim()}</code></pre>
-    </div>
-</div>
 
-<style>
-    .example{
-        position:relative;
-    }
-    
+<ExampleLayout>
+    <iframe slot="result"
+        on:load={sendMessage}
+        style="height:{iframe_height}px"
+        title="Result"
+        scrolling="no"
+        bind:this={iframe}
+        sandbox="allow-popups-to-escape-sandbox allow-scripts allow-popups allow-forms allow-pointer-lock allow-top-navigation allow-modals allow-scripts"
+        {srcdoc}
+    ></iframe>
+     <pre slot="code" class="hljs"><code>{@html code.trim()}</code></pre>
+</ExampleLayout>
+
+<style>   
 	pre{margin:0px;}
 
     iframe{

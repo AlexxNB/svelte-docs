@@ -4,6 +4,15 @@ import fs from 'fs';
 const FILE = 'pages_sections.js'
 const SECTIONS = path.resolve('./src/docs/sections.md');
 
+export function pagesSections() {
+    return {
+        name: 'rollup_plugin_sections',
+
+        resolveId(id) { return id === FILE ? id : null },
+        load(id) { return id === FILE ? getSections() : null }
+    }
+}
+
 function getSections() {
     let sections = [];
 
@@ -47,11 +56,3 @@ function getSections() {
     return `export default ${JSON.stringify(sections)}`;
 }
 
-export function pagesSections() {
-    return {
-        name: 'rollup_plugin_sections',
-
-        resolveId(id) { return id === FILE ? id : null },
-        load(id) { return id === FILE ? getSections() : null }
-    }
-}

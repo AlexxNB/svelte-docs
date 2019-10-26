@@ -10,6 +10,7 @@
 <Button>default</Button>
 <Button disabled>disabled</Button>
 <Button type="success">success</Button>
+<Button type="warning">warning</Button>
 ```
 
 

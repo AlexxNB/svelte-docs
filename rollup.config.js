@@ -17,7 +17,7 @@ import { 	example_component,
 			incpkg
 		} from './sys/builtins/rollup_plugin_examples';
 
-import {builtinsPreprocessor} from './sys/builtins/svelte_preprocess_builtins';
+import {builtins} from './sys/builtins/svelte_preprocess_builtins';
 
 import config from './config';
 
@@ -45,7 +45,7 @@ export default [{
 			emitCss:true,
 			extensions: ['.svelte','.md'],
 			preprocess: [
-				builtinsPreprocessor(),
+				builtins(),
 				markdown()
 			]
 		}),
