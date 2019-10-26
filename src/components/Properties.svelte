@@ -1,4 +1,19 @@
 <script>
+/* (!) Restart bandler if this file was edited
+*   
+*   Properties data structure:
+*   data = [
+*       { 
+*           name <string>,
+*           description <string>,
+*           attr[
+                default<string>,
+*               types: <string> | [ <string> ]
+*           ]
+*       },
+*       ...
+*   ]
+*/
     export let data;
 
     function getTypes(types) {
@@ -15,7 +30,6 @@
         return types.map(type=>`<dfn>${typeValue(type)}</dfn>`).join('');
     }
 </script>
-
 
 <dl class="properties">
 {#each data as prop}
