@@ -18,5 +18,8 @@
 
 </script>
 
-<svelte:component this={cmp}/>
+<article>
+    <svelte:component this={cmp}/>
+</article>
+
 

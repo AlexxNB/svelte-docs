@@ -22,6 +22,14 @@
     --sidebar-width: 300px;
 
     --example-border: var(--light);
+
+    --props-border: var(--light);
+    --props-devider: var(--code);
+    --props-types-bg: var(--code);
+    --props-types-border: var(--light);
+    --props-types-text: var(--hl-keyword);
+    --props-oneof-text: var(--hl-string);
+    --props-default-text: var(--light);
     
     --hl-background: var(--code);
     --hl-text: #505050;

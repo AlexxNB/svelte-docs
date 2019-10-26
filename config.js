@@ -13,6 +13,7 @@ export default {
         //  Then you can use in Example:
         //  import Button from './Button.svelte';
         //  import { Input } from 'mylib';
+        './Button.svelte': './mylib/Button.svelte',
     },
 
     incCSS: [

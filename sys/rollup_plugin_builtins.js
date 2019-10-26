@@ -1,27 +1,34 @@
 import fs from 'fs-extra';
 import path from 'path';
-import { BUILTIN_PKG,CMP_EXAMPLE,EX_DIR,EX_LIST,EX_CSS } from './constants';
+import { BUILTIN_PKG, STORE_PKG, CMP_EXAMPLE,EX_DIR,EX_LIST,EX_CSS,CMP_PROPS } from './constants';
 import { ERR } from './utils.js';
 import config from './../config';
+import { ClientStore } from './stores';
 
 
 // clean examples dir on startup
 (function(){fs.emptyDirSync(EX_DIR)})();
 
 
-function getBuiltComponents() {
-    return `
+function getBuiltComponents(pkg) {
+
+    if(pkg === BUILTIN_PKG) return `
         export {default as Example} from '${CMP_EXAMPLE}'; 
+    `;
+
+    if(pkg === STORE_PKG) return `
+        export default ${JSON.stringify(ClientStore.get())};
     `;
 }
 
 export function builtins() {
+    const packages = [STORE_PKG,BUILTIN_PKG];
+
     return {
         name: 'rollup_plugin_builtins',
-
-        resolveId(id) { return id === BUILTIN_PKG ? id : null },
+        resolveId(id) { return packages.indexOf(id) !== -1 ? id : null },
         load(id) { 
-            if(id === BUILTIN_PKG) return getBuiltComponents();
+            if(packages.indexOf(id) !== -1) return getBuiltComponents(id);
             return null;
         },
         writeBundle() { 

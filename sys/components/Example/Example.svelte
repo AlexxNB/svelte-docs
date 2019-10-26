@@ -48,7 +48,7 @@
         ></iframe>
     </div>
     <div class="code">
-        <pre class="hljs"><code>{@html code}</code></pre>
+        <pre class="hljs"><code>{@html code.trim()}</code></pre>
     </div>
 </div>
 

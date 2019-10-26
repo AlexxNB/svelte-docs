@@ -137,6 +137,10 @@ main{
 	min-height: calc(100vh - var(--topbar-height));
 }
 
+article{
+	padding:0 4em;
+}
+
 /* Example block */
 .example{
 	border:1px solid var(--example-border);
@@ -147,6 +151,74 @@ main{
  .example > .code{
 	border-top:1px solid var(--example-border);
  } 
+
+
+/* Properties block */
+
+.properties{
+	position: relative;
+	display: block;
+	border:1px solid var(--props-border);
+	margin:25px;
+	padding: .3em;
+}
+
+.properties dd, .properties dt{
+	display: inline-block;
+	margin:0px;
+}
+
+/*name*/
+.properties dt{
+	width: 10em;
+	font-weight: bold;
+	padding-top:.5em;
+}
+
+/*type*/
+.properties dt + dd{
+	color: var(--props-border);
+	padding-top:.5em;
+}
+
+.properties dfn{
+	display: inline-block;
+	padding: 0 .3em;
+	color: var(--props-types-text);
+	background: var(--props-types-bg);
+	border: 1px solid var(--props-types-border);
+	border-radius: .3em;
+	margin-right: .3em;
+	font-style: normal;
+	font-family: var(--font-mono);
+	font-size:.8em;
+	letter-spacing: -.05em;
+}
+
+.properties dfn i{
+	color: var(--props-oneof-text);
+}
+
+
+/*default*/
+.properties dt + dd + dd{
+	width:100%;
+	color: var(--props-default-text);
+	padding-top:.3em;
+}
+
+/*description*/
+.properties dt + dd + dd + dd{
+	display: block;
+	border-bottom: 1px solid var(--props-devider);
+	padding:0 .3em .3em 10em;
+	margin-top:-1em;
+}
+
+.properties dd:last-of-type{
+	border-bottom: none;
+}
+
 
 
 /* Responsivity */
@@ -176,4 +248,9 @@ main{
 	.showSidebar{display:block;}
 	nav {width: 0px;}
 	main{margin-left:0px;}
+	article{
+		padding:0 1em;
+	}
+	.properties dt{width: 5em;}
+	.properties dt + dd + dd + dd{padding-left: 5em;}
 }
