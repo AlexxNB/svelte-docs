@@ -1,7 +1,14 @@
-# It is button
+# Button
 
-> Hello `code` sample
+My button component
 
-```js
-console.log(1)
+## Usage
+```example
+<button>default</button>
+<button disabled>disabled</button>
+```
+
+## Properties
+```properties
+disabled | Make button disabled | bool(false)
 ```
