@@ -8,7 +8,7 @@
         if(path !== '/') path = `/${path}`;
 
         if(routes.hasOwnProperty(path)){
-            return routes.path
+            return routes[path]
         }else{
             return Error
         }
