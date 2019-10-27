@@ -7,6 +7,7 @@ export const INDEX = path.resolve('./sys/main.js');
 export const DOCROOT = path.resolve('./src/docs');
 export const PAGES = path.join(DOCROOT,'pages');
 export const SECTIONS = path.join(DOCROOT,'sections.md');
+export const TOPBAR = path.join(DOCROOT,'topbar.md');
 export const STARTPAGE = path.join(DOCROOT,'start.md');
 
 export const PROPS_CMP = path.resolve('./src/components/Properties.svelte');

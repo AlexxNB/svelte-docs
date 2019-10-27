@@ -1,9 +1,11 @@
 import getSections from './sections'
 import getRoutes from './routes'
+import getTopbar from './topbar'
 
 const imports = {
-    "pages_sections.js": getSections,
-    "pages_routes.js": getRoutes,
+    "topbar.js": getTopbar,
+    "sections.js": getSections,
+    "routes.js": getRoutes,
 }
 
 export function pages() {
