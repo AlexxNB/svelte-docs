@@ -4,7 +4,7 @@ const exec = require('shelljs.exec');
 const ln = require('symlink-dir')
 
 const PKGDIR = './packages';
-const TPLDIR = './template';
+const TPLDIR = './templates/default';
 const NMDIR = path.join(TPLDIR,'node_modules','@svelte-docs');
 
 // 1. Do `npm i` in template.

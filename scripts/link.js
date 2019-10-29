@@ -3,7 +3,7 @@ const path = require('path');
 const ln = require('symlink-dir')
 
 const PKGDIR = './packages';
-const TPLDIR = './template';
+const TPLDIR = './templates/default';
 const NMDIR = path.join(TPLDIR,'node_modules','@svelte-docs');
 
 fs.readdirSync(PKGDIR).forEach(pkg => {
