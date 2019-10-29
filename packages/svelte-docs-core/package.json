@@ -1,0 +1,35 @@
+{
+  "name": "svelte-docs-core",
+  "version": "0.1.0",
+  "description": "Document your Svelte components with Svelte-Docs",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "node-watch": "^0.6.3",
+    "chalk": "^2.4.2",
+    "fs-extra": "^8.1.0",
+    "hasha": "^5.1.0",
+    "highlight.js": "^9.15.10",
+    "postcss-import": "^12.0.1",
+    "resize-detector": "^0.2.0",
+    "rollup": "^1.25.2",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-svelte": "^5.0.3",
+    "rollup-plugin-terser": "^4.0.4",
+    "svelte": "^3.0.0",
+    "svelte-preprocess-markdown": "^2.4.0",
+    "sync-folders": "^2.0.0",
+    "touch": "^3.1.0"
+  },
+  "keywords": [],
+  "author": "Alexey Schebelev",
+  "license": "MIT",
+  "devDependencies": {
+    "import-cwd": "^3.0.0"
+  }
+}

@@ -3,11 +3,11 @@ const touch = require('touch');
 const watch = require('node-watch');
 
 const watch_path = [
-    path.resolve('./src/docs'),
-    path.resolve('./src/theme/assets'),
+    path.resolve('./docs'),
+    path.resolve('./theme/assets'),
 ]
 
-const touch_path = path.resolve('./sys/App.svelte');
+const touch_path = path.resolve('./node_modules/svelte-docs-core/App.svelte');
 
 
 watch(watch_path, { recursive: true }, function(evt, name) {

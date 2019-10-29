@@ -1,4 +1,4 @@
-export default {
+module.exports = {
     // if you will serve docs in subderictory use '/subdir/'
     basepath: '/',
 
@@ -35,7 +35,7 @@ export default {
     ],
     
     preprocess: [
-        // preprocessors for Svelte if needed
+        // preprocessors for Svelte if needed in Examples
         // syntax same as for `preprocess` option in `rollup-plugin-svelte`
         // Ex:  Import preprocessor at top of the config file:
         //          import {markdown} from 'svelte-preprocess-markdown';

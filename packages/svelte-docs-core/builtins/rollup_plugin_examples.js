@@ -3,7 +3,7 @@ import fs from 'fs';
 import { EX_CSS,EX_IFRAME,EX_CMP, EX_LAYOUT } from './../constants';
 import { ExamplesStore } from './../stores';
 import { ERR } from './../utils.js';
-import config from './../../config';
+import config from './../config';
 
 const components = {
     "BuiltinExample.js": `export {default} from '${EX_CMP}';`,

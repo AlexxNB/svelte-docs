@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs-extra';
 import { PAGES } from './../constants';
-import config from './../../config';
+import config from './../config';
 
 
 export default function (dev=false) {

@@ -1,5 +1,5 @@
 <script>
-    import {url} from './../../sys/navigation'
+    import {url} from 'svelte-docs-core/navigation'
     import {logo,links} from 'topbar.js';
 </script>
 

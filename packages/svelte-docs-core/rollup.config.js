@@ -8,15 +8,16 @@ import {markdown} from 'svelte-preprocess-markdown';
 import postcss from 'rollup-plugin-postcss';
 import postcssImport from 'postcss-import';
 
-import indexer from './sys/indexer/rollup_plugin_indexer';
-import syncer from './sys/syncer/rollup_plugin_syncer';
-import {pages} from './sys/pages/rollup_plugin_pages';
-import {example_component,incpkg} from './sys/builtins/rollup_plugin_examples';
-import {examples_sources,examples_index} from './sys/builtins/rollup_plugin_examples';
-import {builtins} from './sys/builtins/svelte_preprocess_builtins';
+import cwd from './cwd/rollup_plugin_cwd';
+import indexer from './indexer/rollup_plugin_indexer';
+import syncer from './syncer/rollup_plugin_syncer';
+import {pages} from './pages/rollup_plugin_pages';
+import {example_component,incpkg} from './builtins/rollup_plugin_examples';
+import {examples_sources,examples_index} from './builtins/rollup_plugin_examples';
+import {builtins} from './builtins/svelte_preprocess_builtins';
 
-import {DEVPATH,BUILDPATH,EX_INDEX,DOCROOT} from './sys/constants';
-import highlight from './sys/highlight';
+import {INDEX,DEVPATH,BUILDPATH,EX_INDEX,DOCROOT} from './constants';
+import highlight from './highlight';
 import config from './config';
 
 const production = !process.env.ROLLUP_WATCH;
@@ -24,7 +25,7 @@ const production = !process.env.ROLLUP_WATCH;
 const DIR = production ? BUILDPATH : DEVPATH
 
 export default [{
-	input: 'sys/main.js',
+	input: INDEX,
 	output: {
 		sourcemap: !production,
 		format: 'iife',
@@ -32,6 +33,7 @@ export default [{
 		file: path.join(DIR,'bundle.js')
 	},
 	plugins: [
+		cwd(),
 		indexer(!production),
 		syncer(!production),
 		pages(),

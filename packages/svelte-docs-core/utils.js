@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import path from 'path';
 import fs from 'fs-extra';
-import config from './../config';
+import config from './config';
 
 export function ERR(text,comment) {
     console.log(chalk.bold.red('(!)',text));
