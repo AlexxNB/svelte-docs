@@ -1,9 +1,4 @@
 .DS_Store
 node_modules
-public/bundle.*
-public/examples.*
-public/theme
-sys/_examples
-sys/_store
-mylib
+package-lock.json
 __DOCS__
