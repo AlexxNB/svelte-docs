@@ -1,2 +1,2 @@
 # svelte-docs
-Document Svelte components with MDSv
+Document Svelte components with Svelte-docs

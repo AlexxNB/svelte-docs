@@ -15,7 +15,7 @@ log.error = (...args) => {
 }
 
 const templates = [
-  { name: 'Default', path: 'alexxnb/svelte-docs/template/' },
+  { name: 'Default', path: 'alexxnb/svelte-docs/templates/default' },
 ]
 
 const cli = meow(`

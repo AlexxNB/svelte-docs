@@ -2,9 +2,6 @@
   "name": "@svelte-docs/core",
   "version": "0.1.0",
   "description": "Core of Svelte-docs builder",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "dependencies": {
     "chalk": "^2.4.2",
     "fs-extra": "^8.1.0",
@@ -27,6 +24,14 @@
     "import-cwd": "^3.0.0"
   },
   "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexxNB/svelte-docs.git"
+  },
   "author": "Alexey Schebelev",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexxNB/svelte-docs/issues"
+  },
+  "homepage": "https://alexxnb.github.io/svelte-docs"
 }

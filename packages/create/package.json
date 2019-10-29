@@ -2,7 +2,7 @@
   "name": "create-svelte-docs",
   "version": "0.1.0",
   "description": "CLI tool to init docs source directory",
-  "main": "index.js",
+  "main": "cli.js",
   "bin": {
     "create-svelte-docs": "./cli.js"
   },
@@ -10,8 +10,16 @@
     "start": "./cli.js"
   },
   "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexxNB/svelte-docs.git"
+  },
   "author": "Alexey Schebelev",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexxNB/svelte-docs/issues"
+  },
+  "homepage": "https://alexxnb.github.io/svelte-docs",
   "dependencies": {
     "chalk": "^2.4.1",
     "initit": "^1.0.0-2",

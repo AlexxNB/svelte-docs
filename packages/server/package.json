@@ -1,14 +1,21 @@
 {
   "name": "@svelte-docs/server",
   "version": "0.1.0",
-  "description": "HTTP server to run svelte-docs in development or production modes",
+  "description": "HTTP server to run Svelte-docs in development or production modes",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexxNB/svelte-docs.git"
+  },
   "author": "Alexey Schebelev",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexxNB/svelte-docs/issues"
+  },
+  "homepage": "https://alexxnb.github.io/svelte-docs",
   "dependencies": {
     "chalk": "^2.4.2",
     "console-clear": "^1.1.1",
