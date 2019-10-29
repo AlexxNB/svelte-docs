@@ -5,9 +5,9 @@
     "postinstall": "node scripts/install",
     "link": "node scripts/link",
     "clean": "node scripts/clean",
-    "dev": "npm --prefix ./template run dev",
-    "build": "npm --prefix ./template run build",
-    "start": "npm --prefix ./template run start"
+    "dev": "npm --prefix ./templates/default run dev",
+    "build": "npm --prefix ./templates/default run build",
+    "start": "npm --prefix ./templates/default run start"
   },
   "keywords": [],
   "author": "Alexey Schebelev",

@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "description": "HTTP server to run Svelte-docs in development or production modes",
   "main": "server.js",
-  "scripts": {
-  },
+  "scripts": {},
   "keywords": [],
   "repository": {
     "type": "git",

@@ -2,8 +2,8 @@ import path from 'path';
 import syncFolders from 'sync-folders';
 
 const assets = [
-    "./theme/assets/",
-    "./docs/static/",
+    "./src/theme/assets/",
+    "./src/docs/static/",
 ]
 
 export default function (dev=false) {

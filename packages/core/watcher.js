@@ -3,8 +3,8 @@ const touch = require('touch');
 const watch = require('node-watch');
 
 const watch_path = [
-    path.resolve('./docs'),
-    path.resolve('./theme/assets'),
+    path.resolve('./src/docs'),
+    path.resolve('./src/theme/assets'),
 ]
 
 const touch_path = path.resolve('./node_modules/@svelte-docs/core/App.svelte');
