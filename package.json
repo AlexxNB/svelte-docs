@@ -2,8 +2,12 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "node scripts/install"
+    "postinstall": "node scripts/install",
+    "link": "node scripts/link",
+    "clean": "node scripts/clean",
+    "dev": "npm --prefix ./template run dev",
+    "build": "npm --prefix ./template run build",
+    "start": "npm --prefix ./template run start"
   },
   "keywords": [],
   "author": "Alexey Schebelev",
