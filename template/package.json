@@ -8,11 +8,11 @@
     "svelte": "^3.12.1"
   },
   "scripts": {
-    "build": "rollup -c node_modules/svelte-docs-core/rollup.config.js",
-    "autobuild": "rollup -c node_modules/svelte-docs-core/rollup.config.js -w",
+    "build": "rollup -c node_modules/@svelte-docs/core/rollup.config.js",
+    "autobuild": "rollup -c node_modules/@svelte-docs/core/rollup.config.js -w",
     "dev": "run-p start:dev start:pagewatch autobuild",
-    "start": "node node_modules/svelte-docs-core/sirv",
-    "start:dev": "node node_modules/svelte-docs-core/sirv --dev --single",
-    "start:pagewatch": "node node_modules/svelte-docs-core/watcher"
+    "start": "node node_modules/@svelte-docs/server",
+    "start:dev": "node node_modules/@svelte-docs/server --dev --single",
+    "start:pagewatch": "node node_modules/@svelte-docs/core/watcher"
   }
 }

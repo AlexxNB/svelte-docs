@@ -104,5 +104,6 @@ export default [{
 	],
 	watch: {
 		clearScreen: false,
+		exclude: [DOCROOT+'/**']
 	}
 }];

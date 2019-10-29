@@ -1,5 +1,5 @@
 <script>    
-    import {url} from 'svelte-docs-core/navigation'
+    import {url} from '@svelte-docs/core/navigation'
     import sections from 'sections.js';
     import Section from './Section.svelte';
 </script>

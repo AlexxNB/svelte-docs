@@ -3,7 +3,6 @@
 const path = require('path');
 const meow = require('meow');
 const sirv = require('sirv');
-const polka = require('polka');
 const { createServer } = require('http');
 const clear = require('console-clear');
 const chalk = require('chalk');

@@ -1,5 +1,5 @@
 <script>
-    import {url} from 'svelte-docs-core/navigation'
+    import {url} from '@svelte-docs/core/navigation'
     import routes from 'routes.js';
     import Error from './Error.svelte';
     
