@@ -1,9 +1,7 @@
 {
   "name": "svelte-docs-template",
   "version": "0.1.0",
-  "dependencies": {
-    "sirv-cli": "^0.4.5"
-  },
+  "dependencies": {},
   "devDependencies": {
     "npm-run-all": "^4.1.5",
     "rollup": "^1.26.0",
@@ -13,8 +11,8 @@
     "build": "rollup -c node_modules/svelte-docs-core/rollup.config.js",
     "autobuild": "rollup -c node_modules/svelte-docs-core/rollup.config.js -w",
     "dev": "run-p start:dev start:pagewatch autobuild",
-    "start": "sirv __DOCS__/dist",
-    "start:dev": "sirv __DOCS__/dev --single --dev",
+    "start": "node node_modules/svelte-docs-core/sirv",
+    "start:dev": "node node_modules/svelte-docs-core/sirv --dev --single",
     "start:pagewatch": "node node_modules/svelte-docs-core/watcher"
   }
 }
