@@ -13,14 +13,14 @@ const config = importCWD('./svelte-docs.config.js');
 
 const cli = meow(`
     Usage
-      $ sirv [options]
+      $ node sirv.js [options]
  
     Options
       --dev, -d  Development mode
       --single, -s  SPA Mode
  
     Examples
-      $ sirv --dev --basepath subdir
+      $ node sirv.js --dev --basepath subdir
 `, {
     flags: {
         dev: {
