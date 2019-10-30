@@ -22,7 +22,8 @@
   "homepage": "https://alexxnb.github.io/svelte-docs",
   "dependencies": {
     "chalk": "^2.4.1",
-    "initit": "^1.0.0-2",
+    "fetch-repo-dir": "^1.0.1",
+    "fs-extra": "^8.1.0",
     "meow": "^5.0.0",
     "prompts": "^0.1.12"
   }

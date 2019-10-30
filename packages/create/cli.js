@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-const fs = require('fs')
+const fs = require('fs-extra')
 const path = require('path')
 const meow = require('meow')
 const prompts = require('prompts/dist')
 const chalk = require('chalk')
-const initit = require('initit')
+const fetchRepoDir = require('fetch-repo-dir');
 
-const logo = chalk.cyan('[docs]')
+const logo = chalk.bold('[Svelte-Docs]')
 const log = (...args) => {
   console.log(logo, ...args)
 }
@@ -14,8 +14,10 @@ log.error = (...args) => {
   console.log(chalk.red('[ERROR]'), ...args)
 }
 
-const templates = [
-  { name: 'Default', path: 'alexxnb/svelte-docs/templates/default' },
+const template = 'alexxnb/svelte-docs/template';
+
+const themes = [
+  { name: 'Default', path: 'default' },
 ]
 
 const cli = meow(`
@@ -84,32 +86,33 @@ const run = async opts => {
     process.exit(0)
   }
   const { name } = response
-  const template = templates[response.template] || templates[0]
+  const theme = themes[response.theme] || themes[0]
 
   log('creating docs...')
 
   if (!name) {
     log.error('name is required')
-    // todo: prompt again
     process.exit(1)
   }
 
-  if (!template) {
-    log.error('template not found')
+  if (!theme) {
+    log.error('theme not found')
     process.exit(1)
   }
 
-
-  initit({ name, template: template.path })
-    .then(res => {
-      log('created docs')
-      process.exit(0)
-    })
-    .catch(err => {
-      log.error('failed to create docs')
+  try{
+    await fetchRepoDir([
+      {src: 'alexxnb/svelte-docs/template', dir:name},
+      {src: 'alexxnb/svelte-docs/themes/'+theme.path, dir:path.join(name,'src','theme')}
+    ]);
+    log('created docs')
+    process.exit(0)
+  }catch(err){
+    log.error('failed to create docs')
       log.error(err)
       process.exit(1)
-    })
+  }
 }
 
-run(cli.flags)
+run(cli.flags);
+
