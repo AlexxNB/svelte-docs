@@ -25,6 +25,7 @@
     "fetch-repo-dir": "^1.0.1",
     "fs-extra": "^8.1.0",
     "meow": "^5.0.0",
-    "prompts": "^0.1.12"
+    "prompts": "^0.1.12",
+    "shelljs.exec": "^1.1.8"
   }
 }
