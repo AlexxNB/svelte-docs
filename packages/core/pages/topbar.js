@@ -1,5 +1,5 @@
 import fs from 'fs';
-import {TOPBAR} from './../constants'
+import {TOPBAR} from './../constants';
 
 export default function() {
     let match;

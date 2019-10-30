@@ -28,7 +28,7 @@ function goTree(dir,slug='') {
         }else{
             const match = file.match(/^([^_][\S]+)\.(?:md|svelte)$/);
             if(match){
-                fs.outputFileSync(path.join(config.pathes.build,slug,match[1],'index.html'),getTemplate());
+                fs.outputFileSync(path.join(config.pathes.build,config.basepath,slug,match[1],'index.html'),getTemplate());
             }
         }
     });

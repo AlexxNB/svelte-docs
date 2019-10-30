@@ -1,0 +1,26 @@
+{
+  "name": "@svelte-docs/publisher",
+  "version": "0.1.0",
+  "description": "Helps to publish Svelte-docs on Github Pages and other resources",
+  "main": "publisher.js",
+  "scripts": {},
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexxNB/svelte-docs.git"
+  },
+  "author": "Alexey Schebelev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexxNB/svelte-docs/issues"
+  },
+  "homepage": "https://alexxnb.github.io/svelte-docs",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "gh-pages": "^2.1.1",
+    "gitinfo": "^2.4.0",
+    "import-cwd": "^3.0.0",
+    "meow": "^5.0.0",
+    "prompts": "^0.1.12"
+  }
+}

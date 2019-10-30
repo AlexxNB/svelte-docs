@@ -1,3 +1,4 @@
+import fs from 'fs-extra';
 import path from 'path';
 import svelte from 'rollup-plugin-svelte';
 import resolve from 'rollup-plugin-node-resolve';
@@ -22,7 +23,9 @@ import config from './config';
 
 const production = !process.env.ROLLUP_WATCH;
 
-const DIR = production ? BUILDPATH : DEVPATH
+const DIR = production ? path.join(BUILDPATH,config.basepath) : path.join(DEVPATH,config.basepath);
+
+fs.removeSync(DIR);
 
 export default [{
 	input: INDEX,

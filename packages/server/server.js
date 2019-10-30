@@ -47,7 +47,7 @@ const mw = sirv(DIR, {
     dev: DEV,
     maxAge: 31536000, // 1Y
     immutable: true,
-    onNoMatch: SINGLE ? (req, res) => (req.path='/',mw(req, res, () => (res.statusCode=404,res.end()))) : undefined
+    onNoMatch: SINGLE ? (req, res) => (req.path=config.basepath,mw(req, res, () => (res.statusCode=404,res.end()))) : undefined
 });
 
 createServer(mw).listen(port, hostname, err => {
