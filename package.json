@@ -7,7 +7,8 @@
     "clean": "node scripts/clean",
     "dev": "npm --prefix ./templates/default run dev",
     "build": "npm --prefix ./templates/default run build",
-    "start": "npm --prefix ./templates/default run start"
+    "start": "npm --prefix ./templates/default run start",
+    "init": "node ./packages/create/cli.js"
   },
   "keywords": [],
   "author": "Alexey Schebelev",
