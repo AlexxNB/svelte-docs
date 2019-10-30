@@ -15,8 +15,8 @@
   "license": "MIT",
   "devDependencies": {
     "fs-extra": "^8.1.0",
-    "shelljs.exec": "^1.1.8",
-    "symlink-dir": "^3.1.1"
+    "symlink-dir": "^3.1.1",
+    "std-pour": "^1.1.0"
   },
   "dependencies": {}
 }

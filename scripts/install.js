@@ -1,32 +1,56 @@
 const fs = require('fs-extra');
 const path = require('path');
-const exec = require('shelljs.exec');
+const { pour } = require('std-pour');
 const ln = require('symlink-dir')
 
 const PKGDIR = './packages';
-const TPLDIR = './templates/default';
-const NMDIR = path.join(TPLDIR,'node_modules','@svelte-docs');
+const TPLDIR = './template';
+const THMDIR = './themes/default';
 
-// 1. Do `npm i` in template.
-npm('install',TPLDIR);
+const DEVDIR = './__DEV__'
 
-// 2. Do `npm i` in all packages and symlinking it in template.
+const NMDIR = path.join(DEVDIR,'node_modules','@svelte-docs');
 
-fs.mkdirpSync(NMDIR);
-
-fs.readdirSync(PKGDIR).forEach(pkg => {
-    if(fs.existsSync( path.join(PKGDIR,pkg,'package.json')) ){
-        npm('install',path.join(PKGDIR,pkg));
-        ln(path.join(PKGDIR,pkg),path.join(NMDIR,pkg));
-    }
-})
+async function run(){
+    console.log('1. Symlink template to the Dev dir');
+    ln(TPLDIR,DEVDIR);
 
 
+    console.log('2. Symlink theme to the Dev dir');
+    ln(THMDIR,path.join(DEVDIR,'src','theme'));
 
-function npm(command,dir){
-    if(dir)
-        exec(`npm --prefix ${dir} ${command}`);
-    else
-        exec(`npm ${command}`);
+
+    console.log('3. Do `npm i` in the Dev dir.');
+    await npm('install',TPLDIR);
+
+
+    console.log('4. Do `npm i` in all packages and symlinking it in template.');
+
+    fs.mkdirpSync(NMDIR);
+    fs.readdirSync(PKGDIR).forEach(async pkg => {
+        if(fs.existsSync( path.join(PKGDIR,pkg,'package.json')) ){
+            await npm('install',path.join(PKGDIR,pkg));
+            ln(path.join(PKGDIR,pkg),path.join(NMDIR,pkg));
+        }
+    })
+
+    console.log('Ready!');
 }
 
+async function exec(command){
+    let ar = command.split(' ').map(e => e.trim()).filter(e => e !== '');
+    try{
+        await pour(ar.shift(), ar);
+    }catch(err){
+        throw new Error(err);
+    }
+}
+
+async function npm(command,dir){
+    if(dir)
+        await exec(`npm --prefix ${dir} ${command}`);
+    else
+        await exec(`npm ${command}`);
+}
+
+run();
