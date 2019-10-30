@@ -2,3 +2,5 @@
 node_modules
 package-lock.json
 __DOCS__
+template/src/theme
+__DEV__
