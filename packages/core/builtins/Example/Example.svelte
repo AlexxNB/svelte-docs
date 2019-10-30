@@ -4,6 +4,7 @@
 
 <script>    
     import ExampleLayout from 'ExampleLayout.js';
+    import basepath from 'basepath.js';
 
     export let name;
     export let code;
@@ -16,7 +17,7 @@
 <html style="height: auto !important">
     <head>
         <meta charset='utf-8'>
-        <base href="/" />
+        <base href='${basepath}' />
         <link rel='stylesheet' href='examples.css'>
         <scr`+`ipt defer src='examples.js'></scr`+`ipt>
     </head>

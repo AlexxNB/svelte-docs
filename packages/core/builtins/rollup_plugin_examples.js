@@ -8,6 +8,7 @@ import config from './../config';
 const components = {
     "BuiltinExample.js": `export {default} from '${EX_CMP}';`,
     "ExampleLayout.js": `export {default} from '${EX_LAYOUT}';`,
+    "basepath.js": `export default '${config.basepath}';`,
 }
 
 export function example_component() {
