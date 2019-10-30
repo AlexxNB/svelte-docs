@@ -123,7 +123,7 @@ const run = async opts => {
     log('Installing NPM packages...');
     exec(`npm --prefix ${name} install`);
     log('Docs created succesfully!')
-    log(chalk.green(`Go to the ${name} and run 'npm run dev' command`));
+    log(chalk.green(`Go to the ${name} and execute 'npm run dev' command`));
     process.exit(0)
   }catch(err){
     log.error('Failed to create docs')
