@@ -12,6 +12,7 @@ import postcssImport from 'postcss-import';
 import cwd from './cwd/rollup_plugin_cwd';
 import indexer from './indexer/rollup_plugin_indexer';
 import syncer from './syncer/rollup_plugin_syncer';
+import fixidents from './fixidents/rollup_plugin_fixidents';
 import {pages} from './pages/rollup_plugin_pages';
 import {example_component,incpkg} from './builtins/rollup_plugin_examples';
 import {examples_sources,examples_index} from './builtins/rollup_plugin_examples';
@@ -41,6 +42,7 @@ export default [{
 		syncer(!production),
 		pages(),
 		example_component(),
+		production && fixidents(),
 		svelte({
 			dev: !production,
 			emitCss:true,
@@ -84,6 +86,7 @@ export default [{
 		incpkg(),
 		examples_index(),
 		examples_sources(),
+		production && fixidents(),
 		svelte({
 			dev: production,
 			emitCss:true,
