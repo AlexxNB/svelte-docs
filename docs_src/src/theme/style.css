@@ -1,0 +1,44 @@
+@import "styles/layout.css";
+@import "styles/typography.css";
+@import "styles/fonts.css";
+@import "styles/highlight.css";
+
+:root{
+    --font: "Overpass", sans-serif;
+    --font-mono: "Fira Mono", monospace;
+
+    --primary: #ff3e00;
+    --secondary: #676778;
+    --dark: #34343d;
+    --light: #c0c0d8;
+
+    --white: #ffffff;
+    --code: #f6fafd;
+
+    --text: var(--dark);
+    --text-sidebar:var(--white);
+
+    --topbar-height: 50px;
+    --sidebar-width: 300px;
+
+    --example-border: var(--light);
+
+    --props-border: var(--light);
+    --props-devider: var(--code);
+    --props-types-bg: var(--code);
+    --props-types-border: var(--light);
+    --props-types-text: var(--hl-keyword);
+    --props-oneof-text: var(--hl-string);
+    --props-default-text: var(--light);
+    
+    --hl-background: var(--code);
+    --hl-text: #505050;
+    --hl-comment: #8da4bc; 
+    --hl-keyword: #3c87b9; 
+    --hl-string: #a18851; 
+    --hl-number: #76a562; 
+    --hl-name: #c36031; 
+    --hl-attr: #a18851; 
+    --hl-builtin: #505050; 
+}
+
