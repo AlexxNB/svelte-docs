@@ -1,6 +1,6 @@
 module.exports = {
     // if you will serve docs in subderictory use '/subdir/'
-    basepath: '/',
+    basepath: '/svelte-docs/',
 
     // page title
     title: 'Svelte thing Documentation',
@@ -23,7 +23,6 @@ module.exports = {
         //  Then you can use in Example:
         //  import Button from './Button.svelte';
         //  import { Input } from 'mylib';
-        './Button.svelte': './mylib/Button.svelte',
     },
 
     incCSS: [

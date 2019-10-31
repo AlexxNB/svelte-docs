@@ -5,9 +5,9 @@
     "postinstall": "node scripts/install",
     "link": "node scripts/link",
     "clean": "node scripts/clean",
-    "dev": "npm --prefix ./templates/default run dev",
-    "build": "npm --prefix ./templates/default run build",
-    "start": "npm --prefix ./templates/default run start",
+    "dev": "npm --prefix __DEV__ run dev",
+    "build": "npm --prefix __DEV__ run build",
+    "start": "npm --prefix __DEV__ run start",
     "init": "node ./packages/create/cli.js"
   },
   "keywords": [],
