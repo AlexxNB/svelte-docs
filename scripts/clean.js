@@ -5,6 +5,7 @@ const subjects = ['node_modules','package-lock.json','__DOCS__','__DEV__'];
 
 function cleanDirectory(dir='.') { 
     fs.readdirSync(dir).forEach(file => {
+        if(file === 'docs_src') return;
         const filepath = path.join(dir,file);
         if(subjects.includes(file)) {
             console.log(filepath, 'removed');
