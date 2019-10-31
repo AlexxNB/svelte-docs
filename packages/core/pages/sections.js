@@ -28,7 +28,7 @@ export default function() {
         }
 
         if((el[0].length > 0)){
-            acc.push(section);
+            acc.unshift(section);
         }else{
             
             if(acc.length > 0){

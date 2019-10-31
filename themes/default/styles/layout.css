@@ -101,7 +101,7 @@ nav ul,nav ul li{
 	display: block;
 	padding:0px;
 	margin:0px;
-	margin-bottom: .8em;
+	margin-bottom: .3em;
 }
 
 nav ul{
@@ -109,7 +109,7 @@ nav ul{
 }
 
 nav ul li ul{
-	padding:0 0 0 1em;
+	padding:0 0 .3em 1em;
 }
 
 nav ul li span,nav ul li a{
