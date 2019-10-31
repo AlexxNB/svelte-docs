@@ -1,6 +1,6 @@
 module.exports = {
     // if you will serve docs in subderictory use '/subdir/'
-    basepath: '/svelte-docs/',
+    basepath: '/',
 
     // page title
     title: 'Svelte thing Documentation',

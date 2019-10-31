@@ -48,6 +48,7 @@ function click (event) {
 function cleanURL(url){
     const basepath = getBasepath();
     if(url.startsWith(basepath)) url = url.slice(basepath.length);
+    if(url.endsWith('/')) url = url.slice(0,-1);
     if(url === '') url = '/';
     return url;
 }
