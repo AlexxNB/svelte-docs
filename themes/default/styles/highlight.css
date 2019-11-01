@@ -9,8 +9,8 @@
 	padding: 0.5em;
 	background: var(--hl-background);
 	color: var(--hl-text);
-  font-family: var(--font-mono);
-  font-size: 1.1em;
+	font-family: var(--font-mono);
+	line-height: 1;
 }
   
 .hljs-comment,
