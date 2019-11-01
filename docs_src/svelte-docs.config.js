@@ -23,6 +23,9 @@ module.exports = {
         //  Then you can use in Example:
         //  import Button from './Button.svelte';
         //  import { Input } from 'mylib';
+        'svelte-chota': './exlibris/chota.js',
+        './../mylib/Button.svelte': './exlibris/Button.svelte',
+        './Button.svelte': './exlibris/Button.svelte'
     },
 
     incCSS: [

@@ -6,4 +6,4 @@ By default `basepath` is equal `'/'`, it is mean that documentation will be avai
 
 When you need to place documentation in the subdirectory of your existing site, you should change `basepath` to the value like `/subdir/`. In this case your documentation will be available by URL like https://mysite.com/subdir.
 
-> If you plan to publish documentation in at the Github Pages inside you repository, then set `basepath` option equal the name of your repository.
+> If you plan to publish documentation at the Github Pages of your repository, then set `basepath: '/name-of-your-repo/'`.

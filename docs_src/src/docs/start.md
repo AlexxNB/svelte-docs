@@ -12,6 +12,8 @@ Svelte-Docs is a way to write documentation for your [Svelte](https://svelte.dev
 
 * Built-in deploy on Github Pages
 
+> **It is very first version of the Svelte-Docs. It may be buggy and unstable. Also may be breakable changes in the future versions.**
+
 ## Builtins
 
 ### Examples
