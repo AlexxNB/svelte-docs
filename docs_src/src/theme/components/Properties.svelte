@@ -7,7 +7,7 @@
 *           name <string>,
 *           description <string>,
 *           attr[
-                default<string>,
+*               default<string>,
 *               types: <string> | [ <string> ]
 *           ]
 *       },
@@ -33,7 +33,7 @@
 
 <dl class="properties">
 {#each data as prop}
-<dt>{prop.name}</dt>
+<dt class:required={!prop.attr.default}>{prop.name}</dt>
 <dd>{@html getTypes(prop.attr.types)}</dd>
 <dd>{prop.attr.default ? prop.attr.default : ''}</dd>
 <dd>{prop.description ? prop.description : ''}</dd>

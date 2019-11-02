@@ -1,6 +1,6 @@
 <script>    
     import {url} from '@svelte-docs/core/navigation'
-    import sections from 'sections.js';
+    import sections from '@svelte-docs/get/sections';
     import Section from './Section.svelte';
 </script>
 

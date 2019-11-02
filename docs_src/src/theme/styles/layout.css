@@ -181,6 +181,10 @@ article{
 	padding-top:.5em;
 }
 
+.properties dt.required{
+	text-decoration: underline;
+}
+
 /*type*/
 .properties dt + dd{
 	color: var(--props-border);
