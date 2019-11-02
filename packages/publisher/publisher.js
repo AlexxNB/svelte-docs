@@ -1,5 +1,5 @@
 const importCWD = require('import-cwd');
-const ghPages = require('gh-pages');
+const exec = require('shelljs.exec');
 const path = require('path');
 const createGitinfo = require('gitinfo').default;
 const chalk = require('chalk');
@@ -18,7 +18,7 @@ async function run() {
     const GITURL = git.getGithubUrl();
     const GITUSER = git.getUsername();
     const GITNAME = git.getName();
-    const DIR = path.join(process.cwd(),config.pathes.build,config.basepath);
+    const DIR = path.join(process.cwd(),config.pathes.build,config.basepath).replace(/\/$/,'');
 
     if(!GITURL.startsWith('https://github.com')) Err('Can publish in Github repository only, but `'+GITURL+'` was found.');
 
@@ -34,7 +34,8 @@ async function run() {
     ]);
 
     if(result.confirm){
-        ghPages.publish(DIR, function(err) {
+        console.log('Wait while deploy on GitHub Pages...');
+        publish_ghpages(DIR, function(err) {
             if(err) Err('Fail on publishing:',err);
             console.log(chalk.bold('Done!'));
             console.log(chalk.green(`You can open it at https://${GITUSER.toLowerCase()}.github.com/${GITNAME}`));
@@ -53,5 +54,8 @@ function Err(message){
     process.exit(1);
 }
 
-
-
+function publish_ghpages(dir,cb){
+    dir = path.relative(process.cwd(),dir);
+    const result = exec(`npx gh-pages -d ${dir}`);
+    cb( result.code === 0 ? null : result.stderr);
+}
