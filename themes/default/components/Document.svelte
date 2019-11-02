@@ -7,6 +7,8 @@
 
         if(path !== '/') path = `/${path}`;
 
+        window.scrollTo(0,0);
+
         if(routes.hasOwnProperty(path)){
             return routes[path]
         }else{

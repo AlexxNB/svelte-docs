@@ -6,12 +6,15 @@
     function getPageCmp(path) {
 
         if(path !== '/') path = `/${path}`;
+        
+        window.scrollTo(0,0);
 
         if(routes.hasOwnProperty(path)){
             return routes[path]
         }else{
             return Error
         }
+
     }
 
     $: cmp = getPageCmp($url)
@@ -19,7 +22,7 @@
 </script>
 
 <article>
-    <svelte:component this={cmp}/>
+    <svelte:component this={cmp} />
 </article>
 
 
