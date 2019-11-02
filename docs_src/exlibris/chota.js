@@ -1,1 +1,1 @@
-export {default as Button} from './exlibris/Button.svelte';
+export {default as Button} from './Button.svelte';

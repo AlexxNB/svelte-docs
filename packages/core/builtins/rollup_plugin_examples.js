@@ -79,7 +79,14 @@ export function incpkg() {
             if(config.incPKG[id] !== undefined){
                 const pkgpath = path.resolve(config.incPKG[id]);
                 if (!fs.existsSync(pkgpath)) ERR('Config.incPKG: No such file',pkgpath);
-                return fs.readFileSync(pkgpath,{encoding:'utf-8'})
+
+                if(id.endsWith('.svelte')) 
+                    return fs.readFileSync(pkgpath,{encoding:'utf-8'});
+                else if(pkgpath.endsWith('.svelte')) 
+                    return `export {default} from '${pkgpath}';`; 
+                else
+                    return `export * from '${pkgpath}';`; 
+                
             }else
                 return null;
         }
