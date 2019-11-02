@@ -18,7 +18,7 @@ There are four properties:
 1. *name* - it hasn't default value, so it is not optional. Probably it should be string type, but who knows.
 2. *type* - it is string value, optional because has default value. What other values may be used? 
 3. *disabled* - it is simple: optional, type bool, false by default.
-4. *size* - easy: optional, type number, 1 by default. Nope! Also it could be string like '20px' too.
+4. *size* - easy: optional, type number, 1 by default. Nope! Also it could be string like '20px'.
 
 So lets create fancy table of properties for this component:
 

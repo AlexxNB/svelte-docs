@@ -1,18 +1,30 @@
 # Welcome
 
-Svelte-Docs is a way to write documentation for your [Svelte](https://svelte.dev) components rapidly.
+Svelte-Docs is a rapid way to write documentation for your [Svelte](https://svelte.dev) components.
 
 > **<div>It is very first version of the Svelte-Docs. It is probably buggy and unstable. Also may be breakable changes in the future versions.</div>**
 
-* Based on [svelte-preprocess-markdown](https://alexxnb.github.io/svelte-preprocess-markdown) - write documentation in Markdown mixed with Svelte's features.
+* Based on [MDSv](writing/mdsv) format, which allows write documentation in Markdown mixed with Svelte's features.
 
 * Import and use any Svelte components right inside a markup
 
 * Documentation building as static files, so you can publish it everywhere
 
-* Customizable themes
+* Customizable [themes](theming)
 
-* Built-in deploy on Github Pages
+* Built-in [deploy](publishing/ghpages) on Github Pages
+
+## Zero-config
+
+Just run:
+
+```bash
+npm init svelte-docs
+```
+
+Then [write](writing/mdsv) the documentation and [build](start) it into static site.
+
+
 
 
 ## Builtins

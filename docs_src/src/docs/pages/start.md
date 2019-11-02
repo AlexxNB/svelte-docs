@@ -1,6 +1,6 @@
 # Getting started
 
-## Initialize Svelte-docs
+### Initialize Svelte-docs
 
 Just run this command in the directory of your project:
 
@@ -10,7 +10,7 @@ npm init svelte-docs
 
 It will ask you about destination directory for the documents sources. Then it will download template and theme into the specified directory and install required NPM packages.
 
-## Edit your docs
+### Edit your docs
 
 Enter to the created directory, ex.:
 
@@ -28,7 +28,7 @@ Point your browser on [http://localhost:5000](http://localhost:5000) to see your
 
 Now you can edit files in `src/docs` directory and docs's site in browser will be reloaded on each save. 
 
-## Build your docs
+### Build the documentation site
 
 When your documentation will be ready for production run:
 

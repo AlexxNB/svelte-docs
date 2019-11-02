@@ -1,6 +1,8 @@
-* Getting Started
-    - [Basics](start)
-    - [Structure](structure)
+* [Getting Started](start)
+* Writing docs
+    - [What is MDSv](writing/mdsv)
+    - [Structure](writing/structure)
+    - [Static files](writing/static)
 * [Configuration](config/file)
     - [basepath](config/basepath)
     - [pathes](config/pathes)
@@ -10,4 +12,6 @@
 * Builtins
     - [Example](builtins/example)
     - [Properties](builtins/properties)
-* [Github](https://github.com/alexxnb/svelte-docs)
+* [Theming](theming)
+* Publishing
+    - [GitHub Pages](publishing/ghpages) 

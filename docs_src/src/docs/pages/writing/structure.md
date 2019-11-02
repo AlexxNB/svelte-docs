@@ -13,20 +13,20 @@ In common cases you should edit `*.md` files in the `src/docs` directory. There 
 
 ```bash
 src                         #  URL path part:
-└── docs                    #    ex: http://mydocs.com/page1,
-    ├── pages               #        http://mydocs.com/sub/page2
+└── docs                    #    ex: http://mydocs.com/install,
+    ├── pages               #        http://mydocs.com/component/button
     │   ├── components      #
     │   │   ├── list.md     #  components/list
     │   │   ├── button.md   #  components/button
     │   │   └── input.md    #  components/input
-    │   ├── install.md      #  instal
+    │   ├── install.md      #  install
     └── start.md            #  / 
 
 ```
 
 ## sections.md
 
-This file contains list of content on the right sidebar. This is your documentation's structure reflected in markdown code. 
+This file contains list of content on the left sidebar. This is your documentation's structure reflected in markdown code. 
 
 Let's look on example:
 
