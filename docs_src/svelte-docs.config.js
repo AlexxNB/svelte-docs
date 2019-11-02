@@ -25,7 +25,8 @@ module.exports = {
         //  import { Input } from 'mylib';
         'svelte-chota': './exlibris/chota.js',
         './../mylib/Button.svelte': './exlibris/Button.svelte',
-        './Button.svelte': './exlibris/Button.svelte'
+        './Button.svelte': './exlibris/Button.svelte',
+        'my-button-package': './exlibris/Button.svelte',
     },
 
     incCSS: [

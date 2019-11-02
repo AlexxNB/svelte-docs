@@ -58,7 +58,7 @@ Sometimes no need to show what is inside the *style* or *script* blocks. You can
 </style>
 ```
 
-### import in examples
+### Import in examples
 
 You can import any installed NPM package or local file as you usually do inside ordinary `*.svelte` file.
 
@@ -80,13 +80,14 @@ Also you can import any local file by relative path according documents director
 <Button>Button</Button>
 ```
 
-Other way to import local files - using *virtual packages*(see more [config.incPKG](config/incpkg)).
+Other way to import local files - using *virtual packages*(see [config.incPKG](config/incpkg)).
 
 ```javascript
 // svelte-docs.config.js
 ...
 incPKG:{
-    './Button.svelte': './../mylib/Button.svelte'
+    './Button.svelte': './../mylib/Button.svelte',
+    'my-button-package': './../mylib/Button.svelte'
 },
 ...
 ```
@@ -95,7 +96,17 @@ incPKG:{
 ```example
 <script>
     import Button from './Button.svelte';
+    import Button2 from 'my-button-package';
 </script>
 
 <Button>Button</Button>
+<Button2 error>Button2</Button2>
 ```
+
+### Styling
+
+Styles of the documentation site doesn't affect on the Example's result. Examples have their own global styles(which will be used by all examples). It is stored in `src/theme/examples.css` file. 
+
+Also, you can include global styles from any local file or installed package using [config.incCSS](config/inccss) option.
+
+All styles inside `<style>` block in Examples are encapsulated like in ordinary Svelte component.
