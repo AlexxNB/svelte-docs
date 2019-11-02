@@ -3,8 +3,8 @@
 </script>
 
 <script>    
-    import ExampleLayout from 'ExampleLayout.js';
-    import basepath from 'basepath.js';
+    import ExampleLayout from '@svelte-docs/get/ExampleLayout';
+    import basepath from '@svelte-docs/get/basepath';
 
     export let name;
     export let code;

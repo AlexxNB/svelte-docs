@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 
-const subjects = ['node_modules','package-lock.json','__DOCS__','__DEV__'];
+const subjects = ['node_modules','__DOCS__','__DEV__'];
 
 function cleanDirectory(dir='.') { 
     fs.readdirSync(dir).forEach(file => {

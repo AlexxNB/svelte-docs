@@ -13,8 +13,8 @@ export const SECTIONS = path.join(DOCROOT,'sections.md');
 export const TOPBAR = path.join(DOCROOT,'topbar.md');
 export const STARTPAGE = path.join(DOCROOT,'start.md');
 
-export const PROPS_CMP = path.join(CWD,'src','components','Properties.svelte');
-export const EX_LAYOUT = path.join(CWD,'src','components','Example.svelte');
+export const PROPS_CMP = path.join(CWD,'src','theme','components','Properties.svelte');
+export const EX_LAYOUT = path.join(CWD,'src','theme','components','Example.svelte');
 export const EX_CSS = path.join(CWD,'src','theme','examples.css');
 
 export const EX_CMP = path.join(CORE,'builtins','Example','Example.svelte');

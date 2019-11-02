@@ -56,7 +56,7 @@ function replaceBuiltins(text,filename){
   });
   
   if(used.size > 0){
-    let used_str = Array.from(used).map(cmp => `import ${cmp} from 'Builtin${cmp}.js';`).join("\n");
+    let used_str = Array.from(used).map(cmp => `import ${cmp} from '@svelte-docs/get/Builtin${cmp}';`).join("\n");
     
     if(/^[\t ]*<script>/.test(text))
       text = text.replace(/^[\t ]*<script>/,"$&\n"+used_str);

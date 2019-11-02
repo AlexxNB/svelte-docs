@@ -3,9 +3,9 @@ import getRoutes from './routes'
 import getTopbar from './topbar'
 
 const imports = {
-    "topbar.js": getTopbar,
-    "sections.js": getSections,
-    "routes.js": getRoutes,
+    "@svelte-docs/get/topbar": getTopbar,
+    "@svelte-docs/get/sections": getSections,
+    "@svelte-docs/get/routes": getRoutes,
 }
 
 export function pages() {

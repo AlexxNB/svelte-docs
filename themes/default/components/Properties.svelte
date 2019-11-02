@@ -7,7 +7,7 @@
 *           name <string>,
 *           description <string>,
 *           attr[
-                default<string>,
+*               default<string>,
 *               types: <string> | [ <string> ]
 *           ]
 *       },

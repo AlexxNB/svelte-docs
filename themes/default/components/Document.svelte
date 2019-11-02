@@ -1,6 +1,6 @@
 <script>
     import {url} from '@svelte-docs/core/navigation'
-    import routes from 'routes.js';
+    import routes from '@svelte-docs/get/routes';
     import Error from './Error.svelte';
     
     function getPageCmp(path) {

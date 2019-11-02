@@ -38,9 +38,9 @@ export default (content,params,name) => () => {
           return line;
         })
     }
-  
-        const App = require(PROPS_CMP).default;
-        const {html} = App.render({data:props});
+    
+    const App = require(PROPS_CMP).default;
+    const {html} = App.render({data:props});
     return html;
   }
   

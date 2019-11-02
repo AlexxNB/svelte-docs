@@ -1,6 +1,6 @@
 <script>
     import {url} from '@svelte-docs/core/navigation'
-    import {logo,links} from 'topbar.js';
+    import {logo,links} from '@svelte-docs/get/topbar';
 </script>
 
 <section>

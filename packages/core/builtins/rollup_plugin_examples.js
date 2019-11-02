@@ -6,9 +6,9 @@ import { ERR } from './../utils.js';
 import config from './../config';
 
 const components = {
-    "BuiltinExample.js": `export {default} from '${EX_CMP}';`,
-    "ExampleLayout.js": `export {default} from '${EX_LAYOUT}';`,
-    "basepath.js": `export default '${config.basepath}';`,
+    "@svelte-docs/get/BuiltinExample": `export {default} from '${EX_CMP}';`,
+    "@svelte-docs/get/ExampleLayout": `export {default} from '${EX_LAYOUT}';`,
+    "@svelte-docs/get/basepath": `export default '${config.basepath}';`,
 }
 
 export function example_component() {

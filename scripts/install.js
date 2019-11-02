@@ -12,12 +12,12 @@ const DEVDIR = './__DEV__'
 const NMDIR = path.join(DEVDIR,'node_modules','@svelte-docs');
 
 async function run(){
-    console.log('1. Symlink template to the Dev dir');
+    
+    console.log('1. Symlink theme to the template dir');
+    ln(THMDIR,path.join(TPLDIR,'src','theme'));
+
+    console.log('2. Symlink template to the Dev dir');
     ln(TPLDIR,DEVDIR);
-
-
-    console.log('2. Symlink theme to the Dev dir');
-    ln(THMDIR,path.join(DEVDIR,'src','theme'));
 
 
     console.log('3. Do `npm i` in the Dev dir.');
@@ -34,6 +34,8 @@ async function run(){
         }
     })
 
+    console.log('5. Symlink node_modules tho the themes dir');
+    ln(path.join(DEVDIR,'node_modules'),path.join(THMDIR,'..','node_modules'));
     console.log('Ready!');
 }
 
