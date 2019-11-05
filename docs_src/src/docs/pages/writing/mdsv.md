@@ -1,7 +1,9 @@
 <script>
     import Counter from './../../../../exlibris/Counter.svelte';
     import Spoiler from './../../../../exlibris/spoiler.md';
-    let items = ['one','two','three'];
+     let items = ['item0','item1'];
+    function add() { items = [...items,'item'+items.length] }
+    function del() { items = items.slice(0,-1) }
 </script>
 
 # What is MDSv
@@ -10,18 +12,23 @@ MDSv is a Svelte component written in Markdown syntax. You can import and use an
 
 For more info please visit the [svelte-preprocess-markdown](https://alexxnb.github.io/svelte-preprocess-markdown/) site.
 
-Markdown is a fast and comfortable way to write documentation, MDSv providing full power of Svelte in that docs. 
+Markdown is a fast and comfortable way to write documentation, but MDSv providing full power of Svelte to your docs. 
 
 This document also wrote in MDSv format, so we can do this right inside the document...
 
-```markdown
+```html
 <script>
-    let items = ['one','two','three'];
+    let items = ['item0','item1'];
+    function add() { items = [...items,'item'+items.length] }
+    function del() { items = items.slice(0,-1) }
 </script>
 ...
-{#each items as item}
+{#each item as item}
 * {item}
 {/each}
+
+<button on:click={add}>Add Item</button>
+<button on:click={del}>Del Item</button>
 ```
 
 ... and get the result:
@@ -29,6 +36,9 @@ This document also wrote in MDSv format, so we can do this right inside the docu
 {#each items as item}
 * {item}
 {/each}
+
+<button on:click={add}>Add Item</button>
+<button on:click={del}>Del Item</button>
 
 Or we can import any Svelte component and use it where we want:
 
