@@ -6,4 +6,4 @@ Start from editing files in `src/docs` directory.
 
 ![Great Success](static/great-success.png "Great Success")
 
-> For more info visit the [Svelte-Docs](https://github.com/alexxnb/svelte-docs)
+> For more info visit the [Svelte-Docs Reference](https://alexxnb.github.io/svelte-docs/)
