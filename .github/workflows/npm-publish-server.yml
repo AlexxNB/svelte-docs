@@ -19,6 +19,6 @@ jobs:
       - name: Installing NPM deps
         run: npm --prefix packages/server install
       - name: Building & publishing on NPM
-        run: npm --prefix packages/server publish
+        run: cd packages/server && npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
