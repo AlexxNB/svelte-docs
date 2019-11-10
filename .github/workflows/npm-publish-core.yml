@@ -18,6 +18,8 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - name: Installing NPM deps
         run: npm --prefix packages/core install
+      - name: Copy Readme file
+        run: cp README.md packages/core/README.md
       - name: Building & publishing on NPM
         run: cd packages/core && npm publish
         env:
