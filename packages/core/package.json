@@ -1,6 +1,6 @@
 {
   "name": "@svelte-docs/core",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Core of Svelte-docs builder",
   "dependencies": {
     "chalk": "^2.4.2",
