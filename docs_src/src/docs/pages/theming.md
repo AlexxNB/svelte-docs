@@ -8,11 +8,11 @@ At the moment we have only one default theme which is made as a copy of the offi
 
 ### Colors
 
-You can change the colors of the current theme by changing custom properties in the `src/theme/styles.css` file.
+To tune the colors of the current theme just edit custom properties in the `src/theme/styles.css` file.
 
 ### Styles
 
-You can find all styles of the site in the `src/theme/styles` directory. 
+All styles of the site are in the `src/theme/styles` directory. Any of this `*.css` files should be imported in the `src/theme/styles.css` file.
 
 ### Layout
 
