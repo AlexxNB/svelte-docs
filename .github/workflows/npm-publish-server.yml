@@ -1,10 +1,10 @@
-name: Publish on NPM
+name: Publish @svelte-docs/server
 
 on:
   push:
     paths:
-      - '.github/workflows/npm-publish.yml'
-      - 'package.json'
+      - '.github/workflows/npm-publish-server.yml'
+      - 'packages/server/package.json'
 
 jobs:
   publish-npm:

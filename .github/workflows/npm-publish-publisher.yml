@@ -1,0 +1,24 @@
+name: Publish @svelte-docs/publisher
+
+on:
+  push:
+    paths:
+      - '.github/workflows/npm-publish-publisher.yml'
+      - 'packages/publisher/package.json'
+
+jobs:
+  publish-npm:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+      - name: Installing NPM deps
+        run: npm install
+      - name: Building & publishing on NPM
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
