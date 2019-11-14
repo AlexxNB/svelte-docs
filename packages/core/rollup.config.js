@@ -42,7 +42,6 @@ export default [{
 		syncer(!production),
 		pages(),
 		example_component(),
-		production && fixidents(),
 		svelte({
 			dev: !production,
 			emitCss:true,
@@ -66,7 +65,8 @@ export default [{
 		}),
 		commonjs(),
 		!production && livereload(DIR),
-		production && terser()
+		production && terser(),
+		production && fixidents(),
 	],
 	watch: {
 		clearScreen: false,
