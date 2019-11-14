@@ -63,7 +63,7 @@ function replaceBuiltins(text,filename){
     else if(/^[\t ]*import .+ from .+$/.test(text))
       text = text.replace(/^[\t ]*import .+ from .+$/,used_str+"\n$&");
     else
-      text = text+"\n"+`<script>${used_str}</script>`; 
+      text = text+"\n\n"+`<script>\n${used_str}\n</script>`; 
   }
 
   if(used.has('Example')) touch(EX_INDEX);
