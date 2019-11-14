@@ -2,6 +2,8 @@ name: Publish create-svelte-docs
 
 on:
   push:
+    branches:    
+      - master 
     paths:
       - '.github/workflows/npm-publish-create.yml'
       - 'packages/create/package.json'

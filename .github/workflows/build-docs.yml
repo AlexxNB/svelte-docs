@@ -2,6 +2,8 @@ name: Build Documentation
 
 on:
   push:
+    branches:    
+      - master 
     paths:
       - '.github/workflows/build-docs.yml'
       - 'docs_src/*'
