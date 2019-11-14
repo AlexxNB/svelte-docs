@@ -1,3 +1,7 @@
+---
+fullscreen: true
+---
+
 # Great Success
 
 You are ready to write documentation for new [Svelte](https://svelte.dev) thing!

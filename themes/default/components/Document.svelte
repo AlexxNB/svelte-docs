@@ -1,27 +1,9 @@
 <script>
-    import {url} from '@svelte-docs/core/navigation'
-    import routes from '@svelte-docs/get/routes';
-    import Error from './Error.svelte';
-    
-    function getPageCmp(path) {
-
-        if(path !== '/') path = `/${path}`;
-
-        window.scrollTo(0,0);
-
-        if(routes.hasOwnProperty(path)){
-            return routes[path]
-        }else{
-            return Error
-        }
-    }
-
-    $: cmp = getPageCmp($url)
-
+    import {current_page} from '@svelte-docs/get/routes';
 </script>
 
 <article>
-    <svelte:component this={cmp}/>
+    <svelte:component this={$current_page.component} />
 </article>
 
 

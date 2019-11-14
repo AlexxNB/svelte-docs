@@ -17,7 +17,6 @@ export function initNavigation() {
 function getURL() {
     let path = location.pathname;
     path = cleanURL(path);
-    if(path.length !== 1) path = path.slice(1);
     return path;
 }
 
@@ -41,20 +40,18 @@ function click (event) {
     if(/^\/$/.test(href)) {
         return go('')
     }
-    
     return go(href);
 }
 
 function cleanURL(url){
     const basepath = getBasepath();
     if(url.startsWith(basepath)) url = url.slice(basepath.length);
+    if(url.startsWith('/')) url = url.slice(1);
     if(url.endsWith('/')) url = url.slice(0,-1);
-    if(url === '') url = '/';
     return url;
 }
 
 function getBasepath(){
     let basepath = (document.querySelector('base') || {}).href.replace(window.location.origin,'').slice(0,-1);
-    if(basepath === '') basepath = '/';
-    return basepath;
+    return basepath === '' ? '/' : basepath;
 }

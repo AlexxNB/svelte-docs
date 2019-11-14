@@ -1,20 +1,35 @@
 import path from 'path';
 import fs from 'fs';
 
-import {PAGES,STARTPAGE} from './../constants';
+import {PAGES,STARTPAGE,ERROR_CMP} from './../constants';
 
 
 export default function () {
     const pages = getRoutes(PAGES);
 
-    const strImports = pages.map(item =>`import ${item.component} from '${item.path}'`).join(";\n");
-    const strRoutes = pages.map(item =>`"${item.route}": ${item.component}`).join(",\n");
+    const strImports = pages.map(item =>`import {default as ${item.component}, META as ${item.component}_META} from '${item.path}'`).join(";\n");
+    const strRoutes = pages.map(item =>`{url: '${item.route}', component:${item.component}, meta:${item.component}_META}`).join(",\n");
 
     return `${strImports}
+    import Error from '${ERROR_CMP}';
+
+    import {derived} from 'svelte/store';
+    import {url} from '@svelte-docs/core/navigation'
     
-    export default {
+    const routes = [
         ${strRoutes}
-    }`;
+    ]
+
+    export const current_page = derived(url,$url => {
+
+        const route = routes.filter(r => r.url === $url);
+        
+        if(route.length > 0)
+            return route[0];
+        else
+            return {url:'404', component:Error, meta:{}};
+    });
+    `;
 }
 
 function getRoutes(dir,slug='') {
@@ -23,7 +38,7 @@ function getRoutes(dir,slug='') {
     let pages = [];
     if(slug==='/') pages.push({
         component:'Startpage',
-        route:'/',
+        route:'',
         path:STARTPAGE
     });
 
@@ -41,7 +56,7 @@ function getRoutes(dir,slug='') {
                 const url = slug+formatSlug(match[1]);
                 pages.push({
                     component:compname,
-                    route:url,
+                    route:url.slice(1),
                     path:filepath
                 });
             }
