@@ -1,6 +1,6 @@
 {
   "name": "@svelte-docs/publisher",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Helps to publish Svelte-docs on Github Pages and other resources",
   "main": "publisher.js",
   "scripts": {},

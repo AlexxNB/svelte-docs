@@ -14,6 +14,7 @@ export const TOPBAR = path.join(DOCROOT,'topbar.md');
 export const STARTPAGE = path.join(DOCROOT,'start.md');
 
 export const PROPS_CMP = path.join(CWD,'src','theme','components','Properties.svelte');
+export const ERROR_CMP = path.join(CWD,'src','theme','components','Error.svelte');
 export const EX_LAYOUT = path.join(CWD,'src','theme','components','Example.svelte');
 export const EX_CSS = path.join(CWD,'src','theme','examples.css');
 

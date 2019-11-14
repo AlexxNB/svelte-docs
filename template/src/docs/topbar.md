@@ -1,4 +1,4 @@
 # Svelte*Docs* #
 
-* [Home](/)
+* [Docs](install)
 * [Github](https://github.com/alexxnb/svelte-docs)
