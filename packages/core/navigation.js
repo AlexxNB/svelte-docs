@@ -17,7 +17,7 @@ export function initNavigation() {
 function getURL() {
     let path = location.pathname;
     path = cleanURL(path);
-    if(path.length !== '/') path = path.slice(1);
+    if(path.length !== 1) path = path.slice(1);
     return path;
 }
 
@@ -54,5 +54,7 @@ function cleanURL(url){
 }
 
 function getBasepath(){
-    return (document.querySelector('base') || {}).href.replace(window.location.origin,'').slice(0,-1);
+    let basepath = (document.querySelector('base') || {}).href.replace(window.location.origin,'').slice(0,-1);
+    if(basepath === '') basepath = '/';
+    return basepath;
 }
