@@ -1,7 +1,9 @@
+* [Introduction](introduction)
 * [Getting Started](start)
 * Writing docs
     - [What is MDSv](writing/mdsv)
     - [Structure](writing/structure)
+    - [Page settings](writing/settings)
     - [Static files](writing/static)
 * [Configuration](config/file)
     - [basepath](config/basepath)

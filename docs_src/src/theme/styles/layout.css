@@ -143,6 +143,10 @@ main{
 	max-width:70em;
 }
 
+main.fullscreen{
+	margin:0 auto;
+}
+
 article{
 	padding:0 4em;
 }
