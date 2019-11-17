@@ -3,7 +3,7 @@ const touch = require('touch');
 const watch = require('node-watch');
 
 const watch_path = [
-    path.resolve('./src/docs'),
+    path.resolve('./src/pages'),
     path.resolve('./src/theme/assets'),
 ]
 

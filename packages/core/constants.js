@@ -7,11 +7,10 @@ export const DEVPATH = path.join(CWD,'__DOCS__','dev');
 export const BUILDPATH = path.join(CWD,'__DOCS__','dist');
 export const INDEX = path.join(CORE,'main.js');
 
-export const DOCROOT = path.join(CWD,'src/docs');
-export const PAGES = path.join(DOCROOT,'pages');
-export const SECTIONS = path.join(DOCROOT,'sections.md');
-export const TOPBAR = path.join(DOCROOT,'topbar.md');
-export const STARTPAGE = path.join(DOCROOT,'start.md');
+export const SRC = path.join(CWD,'src');
+export const PAGES = path.join(SRC,'pages');
+export const INCLUDES = path.join(SRC,'includes');
+export const STARTPAGE = path.join(PAGES,'index.md');
 
 export const PROPS_CMP = path.join(CWD,'src','theme','components','Properties.svelte');
 export const ERROR_CMP = path.join(CWD,'src','theme','components','Error.svelte');

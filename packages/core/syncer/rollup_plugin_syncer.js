@@ -3,7 +3,7 @@ import syncFolders from 'sync-folders';
 
 const assets = [
     "./src/theme/assets/",
-    "./src/docs/static/",
+    "./src/static/",
 ]
 
 export default function (dev=false) {
