@@ -1,6 +1,6 @@
 <script>
-   import Logo from '$CWD/src/includes/logo.md';
-   import Topbar from '$CWD/src/includes/topbar.md';
+   import Logo from '@INCLUDES/logo.md';
+   import Topbar from '@INCLUDES/topbar.md';
 </script>
 
 <section>

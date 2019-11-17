@@ -9,7 +9,7 @@ import {markdown} from 'svelte-preprocess-markdown';
 import postcss from 'rollup-plugin-postcss';
 import postcssImport from 'postcss-import';
 
-import cwd from './cwd/rollup_plugin_cwd';
+import replacer from './replacer/rollup_plugin_replacer';
 import indexer from './indexer/rollup_plugin_indexer';
 import syncer from './syncer/rollup_plugin_syncer';
 import fixidents from './fixidents/rollup_plugin_fixidents';
@@ -37,7 +37,7 @@ export default [{
 		file: path.join(DIR,'bundle.js')
 	},
 	plugins: [
-		cwd(),
+		replacer(),
 		indexer(!production),
 		syncer(!production),
 		pages(),

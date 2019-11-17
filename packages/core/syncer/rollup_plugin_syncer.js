@@ -1,9 +1,11 @@
 import path from 'path';
 import syncFolders from 'sync-folders';
 
+import {STATIC,THEME} from './../constants';
+
 const assets = [
-    "./src/theme/assets/",
-    "./src/static/",
+    path.join(THEME,'assets'),
+    STATIC,
 ]
 
 export default function (dev=false) {

@@ -1,5 +1,5 @@
 <script>
-    import Error from '$CWD/src/includes/error.md';
+    import Error from '@INCLUDES/error.md';
 </script>
 
 <Error />

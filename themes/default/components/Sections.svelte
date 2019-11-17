@@ -1,5 +1,5 @@
 <script>    
-    import Sidebar from '$CWD/src/includes/sidebar.md';
+    import Sidebar from '@INCLUDES/sidebar.md';
 </script>
 
 <Sidebar />
