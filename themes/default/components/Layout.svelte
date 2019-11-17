@@ -1,22 +1,21 @@
 <script>
 	import {current_page} from '@svelte-docs/get/routes';
-	// import page components
 	import Topbar from './Topbar.svelte';
 	import Sections from './Sections.svelte';
 	import Document from './Document.svelte';
 
 	function set_active_link(node){
-      return {
-			destroy: current_page.subscribe(page => {
-					node.querySelectorAll('a').forEach(a => {
-					if(a.getAttribute('href') === page.url)
-						a.classList.add('active');
-					else
-						a.classList.remove('active')
-					});
-				})
-			}
-	  }
+	return {
+		destroy: current_page.subscribe(page => {
+				node.querySelectorAll('a').forEach(a => {
+				if(a.getAttribute('href') === page.url)
+					a.classList.add('active');
+				else
+					a.classList.remove('active')
+				});
+			})
+		}
+	}
 </script>
 
 <!-- top bar -->
@@ -40,7 +39,7 @@
 	</nav> 
 
 	<!-- content -->
-	<main class="with-sidebar">
+	<main>
 		<Document />
 	</main>
 

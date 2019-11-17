@@ -1,6 +1,5 @@
 <script>    
-    import {current_page} from '@svelte-docs/get/routes';
-    import Sidemenu from '$CWD/src/includes/sidemenu.md';
+    import Sidebar from '$CWD/src/includes/sidebar.md';
 </script>
 
-<Sidemenu />
+<Sidebar />

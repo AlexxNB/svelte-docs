@@ -1,5 +1,4 @@
-* [Getting Started](install)
+* [Getting Started](getting-started)
 * Components
     - [Button](components/button)
-    - [Button3](components/button2)
 * [Github](https://github.com/alexxnb/svelte-docs)
