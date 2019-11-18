@@ -26,7 +26,7 @@ npm run dev
 
 Point your browser on [http://localhost:5000](http://localhost:5000) to see your docs in action.
 
-Now you can edit files in `src/docs` directory and page in a browser will be reloaded on each save. 
+Now you can edit files in `src/pages` directory and browser will be reloaded on each save. 
 
 ### Build the documentation site
 

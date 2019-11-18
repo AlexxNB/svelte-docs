@@ -6,7 +6,7 @@ fullscreen: true
 
 You are ready to write documentation for new [Svelte](https://svelte.dev) thing!
 
-Start from editing files in `src/docs` directory.
+Start from editing files in `src/pages` directory.
 
 ![Great Success](static/great-success.png "Great Success")
 
