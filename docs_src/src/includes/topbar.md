@@ -1,4 +1,2 @@
-# Svelte*Docs* #
-
-* [Docs](introduction)
+* [Docs](getting-started)
 * [Github](https://github.com/alexxnb/svelte-docs)

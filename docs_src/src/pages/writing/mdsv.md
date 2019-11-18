@@ -1,6 +1,6 @@
 <script>
-    import Counter from './../../../../exlibris/Counter.svelte';
-    import Spoiler from './../../../../exlibris/spoiler.md';
+    import Counter from './../../../exlibris/Counter.svelte';
+    import Spoiler from './../../../exlibris/spoiler.md';
      let items = ['item0','item1'];
     function add() { items = [...items,'item'+items.length] }
     function del() { items = items.slice(0,-1) }

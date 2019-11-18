@@ -13,7 +13,7 @@ fullscreen: true
 
     <div class="buttons">
         <a href="introduction">Introduction</a>
-        <a href="start">Getting Started</a>
+        <a href="getting-started">Getting Started</a>
     </div>
 </div>
 
