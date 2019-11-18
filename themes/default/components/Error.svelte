@@ -1,3 +1,5 @@
-<h1>Error</h1>
+<script>
+    import Error from '@INCLUDES/error.md';
+</script>
 
-Page not found
+<Error />

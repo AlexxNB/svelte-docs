@@ -16,7 +16,8 @@
     --code: #f6fafd;
 
     --text: var(--dark);
-    --text-sidebar:var(--white);
+    --text-sidebar:#d4d4d4;
+    --text-sidebar-links:var(--white);
 
     --topbar-height: 50px;
     --sidebar-width: 300px;

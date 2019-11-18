@@ -1,4 +1,4 @@
-# About my components
+# About my component
 
 It is very cool button.
 

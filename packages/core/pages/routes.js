@@ -27,7 +27,7 @@ export default function () {
         if(route.length > 0)
             return route[0];
         else
-            return {url:'404', component:Error, meta:{}};
+            return {url:'404', component:Error, meta:{fullscreen: true}};
     });
     `;
 }

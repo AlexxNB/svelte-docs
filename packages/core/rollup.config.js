@@ -9,7 +9,7 @@ import {markdown} from 'svelte-preprocess-markdown';
 import postcss from 'rollup-plugin-postcss';
 import postcssImport from 'postcss-import';
 
-import cwd from './cwd/rollup_plugin_cwd';
+import replacer from './replacer/rollup_plugin_replacer';
 import indexer from './indexer/rollup_plugin_indexer';
 import syncer from './syncer/rollup_plugin_syncer';
 import fixidents from './fixidents/rollup_plugin_fixidents';
@@ -18,7 +18,7 @@ import {example_component,incpkg} from './builtins/rollup_plugin_examples';
 import {examples_sources,examples_index} from './builtins/rollup_plugin_examples';
 import {builtins} from './builtins/svelte_preprocess_builtins';
 
-import {INDEX,DEVPATH,BUILDPATH,EX_INDEX,DOCROOT} from './constants';
+import {INDEX,DEVPATH,BUILDPATH,EX_INDEX,SRC} from './constants';
 import highlight from './highlight';
 import config from './config';
 
@@ -37,7 +37,7 @@ export default [{
 		file: path.join(DIR,'bundle.js')
 	},
 	plugins: [
-		cwd(),
+		replacer(),
 		indexer(!production),
 		syncer(!production),
 		pages(),
@@ -70,7 +70,7 @@ export default [{
 	],
 	watch: {
 		clearScreen: false,
-		exclude: [DOCROOT+'/**']
+		exclude: [SRC]
 	}
 },
 // Examples bundle
@@ -110,6 +110,6 @@ export default [{
 	],
 	watch: {
 		clearScreen: false,
-		exclude: [DOCROOT+'/**']
+		exclude: [SRC]
 	}
 }];
