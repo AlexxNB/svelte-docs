@@ -18,7 +18,7 @@ import {example_component,incpkg} from './builtins/rollup_plugin_examples';
 import {examples_sources,examples_index} from './builtins/rollup_plugin_examples';
 import {builtins} from './builtins/svelte_preprocess_builtins';
 
-import {INDEX,DEVPATH,BUILDPATH,EX_INDEX} from './constants';
+import {INDEX,DEVPATH,BUILDPATH,EX_INDEX,SRC} from './constants';
 import highlight from './highlight';
 import config from './config';
 
@@ -70,7 +70,7 @@ export default [{
 	],
 	watch: {
 		clearScreen: false,
-	//	exclude: [DOCROOT+'/**']
+		exclude: [SRC]
 	}
 },
 // Examples bundle
@@ -110,6 +110,6 @@ export default [{
 	],
 	watch: {
 		clearScreen: false,
-	//	exclude: [DOCROOT+'/**']
+		exclude: [SRC]
 	}
 }];
