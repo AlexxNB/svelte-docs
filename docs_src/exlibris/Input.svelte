@@ -1,10 +1,13 @@
 <script>
-    /* Name of the input | string*/
+    /** @type {string} Name of the input */
     export let name;
-    /* Type of the input | 'text','number','range','date' */
+    /** @type {('text','number','range','date')} Type of the input */
     export let type = 'text';
-    /* Should the input be disabled | bool */
+    /** 
+     * Should the input be disabled
+     * @type {bool} 
+     */
     export let disabled = false;
-    /* Size of the input | number/string */
+    /** @type {(number|string)} Size of the input */
     export let size = 1;
 </script>
