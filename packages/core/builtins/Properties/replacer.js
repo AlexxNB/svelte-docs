@@ -2,6 +2,7 @@ import marked from 'marked';
 import fs from 'fs-extra';
 import { PROPS_CMP } from './../../constants';
 import { getRealImportedPath } from './../../utils';
+import { getInterface } from './parser';
 
 import('svelte/register');
 
@@ -12,7 +13,7 @@ export default (content,params,name) => () => {
   
       if(filepath){
         const source = fs.readFileSync(filepath,{encoding:'utf-8'});
-        props = propsExtrator(source);
+        props = getInterface(source);
       }
     }else{
       props = content.split('\n')
