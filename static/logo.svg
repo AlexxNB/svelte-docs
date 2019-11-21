@@ -45,7 +45,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -69,31 +69,53 @@
          d="M 45.8171,106.5815 A 20.7182,20.7182 0 0 1 23.58,98.3389 19.1739,19.1739 0 0 1 20.3034,83.8364 18.1886,18.1886 0 0 1 20.9267,81.4007 l 0.4912,-1.4978 1.3363,0.9815 a 33.6443,33.6443 0 0 0 10.203,5.0978 l 0.9694,0.2941 -0.0893,0.9675 a 5.8474,5.8474 0 0 0 1.052,3.8781 6.2389,6.2389 0 0 0 6.6952,2.485 5.7449,5.7449 0 0 0 1.6021,-0.7041 L 69.27,76.281 a 5.4306,5.4306 0 0 0 2.4506,-3.631 5.7948,5.7948 0 0 0 -0.9875,-4.3712 6.2436,6.2436 0 0 0 -6.6978,-2.4864 5.7427,5.7427 0 0 0 -1.6,0.7036 l -9.9532,6.3449 a 19.0329,19.0329 0 0 1 -5.2965,2.3259 20.7181,20.7181 0 0 1 -22.2368,-8.2427 19.1725,19.1725 0 0 1 -3.2766,-14.5024 17.9885,17.9885 0 0 1 8.13,-12.0513 L 55.8833,23.7472 a 19.0038,19.0038 0 0 1 5.3,-2.3287 20.7182,20.7182 0 0 1 22.2367,8.2426 19.1739,19.1739 0 0 1 3.2766,14.5025 18.4,18.4 0 0 1 -0.6233,2.4357 l -0.4912,1.4978 -1.3356,-0.98 a 33.6175,33.6175 0 0 0 -10.2037,-5.1 l -0.9694,-0.2942 0.0893,-0.9675 a 5.8588,5.8588 0 0 0 -1.052,-3.878 6.2389,6.2389 0 0 0 -6.6952,-2.485 5.7449,5.7449 0 0 0 -1.6021,0.7041 L 37.73,51.719 a 5.4218,5.4218 0 0 0 -2.4487,3.63 5.7862,5.7862 0 0 0 0.9856,4.3717 6.2437,6.2437 0 0 0 6.6978,2.4864 5.7652,5.7652 0 0 0 1.602,-0.7041 l 9.9519,-6.3425 a 18.978,18.978 0 0 1 5.2959,-2.3278 20.7181,20.7181 0 0 1 22.2368,8.2427 19.1725,19.1725 0 0 1 3.2766,14.5024 17.9977,17.9977 0 0 1 -8.13,12.0532 l -26.0812,16.6218 a 19.0038,19.0038 0 0 1 -5.3,2.3287"
          inkscape:connector-curvature="0" />
     </g>
-    <text
-       xml:space="preserve"
+    <g
+       aria-label="SVELTE"
+       transform="scale(0.99931278,1.0006877)"
        style="font-style:normal;font-weight:normal;font-size:5.05589104px;line-height:1.25;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="36.868675"
-       y="282.59622"
-       id="text82"
-       transform="scale(0.99931278,1.0006877)"><tspan
-         sodipodi:role="line"
-         id="tspan80"
-         x="36.868675"
-         y="282.59622"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Overpass Semibold Cyr';-inkscape-font-specification:'Overpass Semibold Cyr';stroke-width:0.26458332">SVELTE</tspan></text>
-    <text
-       id="text86"
-       y="295.07199"
-       x="69.560493"
-       style="font-style:normal;font-weight:normal;font-size:20.86824799px;line-height:1.25;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       xml:space="preserve"
-       transform="matrix(0.99931278,0,-0.10936033,1.0006877,0,0)"><tspan
+       id="text82">
+      <path
+         d="m 20.213859,282.65689 q -0.470198,0 -0.813998,-0.22751 -0.343801,-0.23257 -0.475254,-0.63199 v 0 l 0.495477,-0.18201 q 0.11123,0.24774 0.323577,0.39436 0.212348,0.14156 0.490422,0.14156 v 0 q 0.293241,0 0.465142,-0.14156 0.176956,-0.14157 0.176956,-0.40447 v 0 q 0,-0.18201 -0.106174,-0.2983 -0.106174,-0.12134 -0.262906,-0.19718 -0.156733,-0.0758 -0.429751,-0.1719 v 0 q -0.333689,-0.12134 -0.54098,-0.22246 -0.202236,-0.10617 -0.348857,-0.2983 -0.141565,-0.19212 -0.141565,-0.49547 v 0 q 0,-0.2528 0.131454,-0.46515 0.136509,-0.21234 0.389303,-0.33369 0.257851,-0.12639 0.606707,-0.12639 v 0 q 0.434807,0 0.712881,0.19212 0.28313,0.19213 0.379192,0.51065 v 0 l -0.485366,0.16178 q -0.07078,-0.16178 -0.237627,-0.25785 -0.161788,-0.10111 -0.409527,-0.10111 v 0 q -0.252795,0 -0.399415,0.11123 -0.141565,0.11123 -0.141565,0.31346 v 0 q 0,0.13651 0.09101,0.23257 0.09101,0.091 0.232571,0.15674 0.141565,0.0607 0.389303,0.14662 v 0 q 0.353913,0.13145 0.576372,0.24773 0.222459,0.11629 0.379192,0.33369 0.161788,0.21741 0.161788,0.55615 v 0 q 0,0.32863 -0.156732,0.57132 -0.156733,0.23762 -0.434807,0.36402 -0.273018,0.12134 -0.616819,0.12134 z"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Overpass Semibold Cyr';-inkscape-font-specification:'Overpass Semibold Cyr';stroke-width:0.26458332"
-         y="295.07199"
-         x="69.560493"
-         id="tspan84"
-         sodipodi:role="line"><tspan
-   style="font-size:22.7641983px;stroke-width:0.26458332"
-   id="tspan901">D</tspan>oc</tspan></text>
+         id="path902" />
+      <path
+         d="m 23.138771,282.59622 q -0.606707,-1.76956 -1.213414,-3.53912 h 0.56626 l 0.803887,2.46727 q 0.07584,0.23257 0.111229,0.40447 v 0 q 0.03539,-0.1719 0.11123,-0.40447 l 0.793775,-2.46727 h 0.561204 l -1.208358,3.53912 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Overpass Semibold Cyr';-inkscape-font-specification:'Overpass Semibold Cyr';stroke-width:0.26458332"
+         id="path904" />
+      <path
+         d="m 27.831191,282.59622 q -1.152743,0 -2.305487,0 v -3.53912 h 2.194257 v 0.49548 h -1.668444 v 0.97073 h 1.076905 v 0.49547 h -1.076905 v 1.08196 h 1.779674 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Overpass Semibold Cyr';-inkscape-font-specification:'Overpass Semibold Cyr';stroke-width:0.26458332"
+         id="path906" />
+      <path
+         d="m 30.822066,282.59622 q -1.127464,0 -2.254927,0 v -3.53912 h 0.525812 v 3.03353 h 1.729115 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Overpass Semibold Cyr';-inkscape-font-specification:'Overpass Semibold Cyr';stroke-width:0.26458332"
+         id="path908" />
+      <path
+         d="m 33.701634,279.56269 q -0.500534,0 -1.001067,0 v 3.03353 h -0.525812 v -3.03353 h -1.001067 v -0.50559 h 2.527946 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Overpass Semibold Cyr';-inkscape-font-specification:'Overpass Semibold Cyr';stroke-width:0.26458332"
+         id="path910" />
+      <path
+         d="m 36.688875,282.59622 q -1.152743,0 -2.305486,0 v -3.53912 h 2.194256 v 0.49548 h -1.668444 v 0.97073 h 1.076905 v 0.49547 h -1.076905 v 1.08196 h 1.779674 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Overpass Semibold Cyr';-inkscape-font-specification:'Overpass Semibold Cyr';stroke-width:0.26458332"
+         id="path912" />
+    </g>
+    <g
+       aria-label="Doc"
+       transform="matrix(0.99931278,0,-0.10936033,1.0006877,0,0)"
+       style="font-style:normal;font-weight:normal;font-size:20.86824799px;line-height:1.25;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       id="text86">
+      <path
+         d="m 33.837776,279.13705 q 2.230891,0 4.461782,0 2.640647,0 4.347962,1.13821 1.707315,1.11545 2.481298,2.91382 0.773983,1.79837 0.773983,3.91544 v 0 q 0,2.02602 -0.751219,3.82439 -0.751218,1.79837 -2.481298,2.98211 -1.707314,1.16097 -4.461782,1.16097 v 0 h -4.370726 z m 4.757717,13.70405 q 1.707315,0 2.799996,-0.81951 1.092682,-0.84228 1.57073,-2.13984 0.478048,-1.32032 0.478048,-2.77723 v 0 q 0,-1.5252 -0.500812,-2.82276 -0.478048,-1.29756 -1.525201,-2.09431 -1.024389,-0.81951 -2.572355,-0.81951 h -2.640647 v 11.47316 z"
+         style="font-size:22.7641983px;stroke-width:0.26458332"
+         id="path895" />
+      <path
+         d="m 53.262717,295.32241 q -2.25377,0 -3.56847,-1.48165 -1.293831,-1.48164 -1.293831,-4.09017 v 0 q 0,-2.60853 1.293831,-4.09018 1.3147,-1.50251 3.56847,-1.50251 v 0 q 2.253771,0 3.568471,1.50251 1.314699,1.48165 1.314699,4.09018 v 0 q 0,2.60853 -1.314699,4.09017 -1.3147,1.48165 -3.568471,1.48165 z m 0,-2.04509 q 1.252095,0 1.982484,-0.93907 0.730389,-0.93907 0.730389,-2.58766 v 0 q 0,-1.64859 -0.730389,-2.58767 -0.730389,-0.95993 -1.982484,-0.95993 v 0 q -1.231226,0 -1.961615,0.95993 -0.730389,0.93908 -0.730389,2.58767 v 0 q 0,1.62772 0.730389,2.58766 0.730389,0.93907 1.961615,0.93907 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Overpass Semibold Cyr';-inkscape-font-specification:'Overpass Semibold Cyr';stroke-width:0.26458332"
+         id="path897" />
+      <path
+         d="m 64.873941,295.32241 q -2.149429,0 -3.401524,-1.48165 -1.252095,-1.48164 -1.252095,-4.09017 v 0 q 0,-2.60853 1.252095,-4.09018 1.252095,-1.50251 3.401524,-1.50251 v 0 q 1.502514,0 2.525058,0.68865 1.043413,0.66778 1.502514,2.06596 l -2.065956,0.70952 q -0.250419,-0.62605 -0.730389,-1.00168 -0.47997,-0.37563 -1.147754,-0.37563 v 0 q -1.210358,0 -1.878142,0.93907 -0.646916,0.91821 -0.646916,2.5668 v 0 q 0,1.62772 0.646916,2.56679 0.646916,0.91821 1.794669,0.91821 v 0 q 0.730389,0 1.252095,-0.3965 0.542575,-0.41737 0.751257,-1.16862 v 0 l 2.065957,0.64691 q -0.417365,1.48165 -1.460778,2.25377 -1.022544,0.75126 -2.608531,0.75126 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Overpass Semibold Cyr';-inkscape-font-specification:'Overpass Semibold Cyr';stroke-width:0.26458332"
+         id="path899" />
+    </g>
   </g>
 </svg>
