@@ -1,2 +1,4 @@
+import Github from './github.svelte';
+
 * [Docs](getting-started)
-* [Github](https://github.com/alexxnb/svelte-docs)
+* <Github animation url="https://github.com/alexxnb/svelte-docs"/>
