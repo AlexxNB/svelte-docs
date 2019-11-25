@@ -1,6 +1,6 @@
 {
   "name": "@svelte-docs/core",
-  "version": "0.5.1",
+  "version": "0.5.3",
   "description": "Core of Svelte-docs builder",
   "dependencies": {
     "chalk": "^2.4.2",
@@ -13,15 +13,15 @@
     "node-watch": "^0.6.3",
     "postcss-import": "^12.0.1",
     "resize-detector": "^0.2.0",
-    "rollup": "^1.27.0",
+    "rollup": "^1.27.5",
     "rollup-plugin-commonjs": "^10.0.0",
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-svelte": "^5.1.1",
     "rollup-plugin-terser": "^4.0.4",
-    "svelte": "^3.14.1",
-    "svelte-preprocess-markdown": "^2.5.3",
+    "svelte": "^3.15.0",
+    "svelte-preprocess-markdown": "^2.5.6",
     "sync-folders": "^2.0.0",
     "touch": "^3.1.0"
   },

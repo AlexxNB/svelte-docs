@@ -4,21 +4,19 @@ import hljs_svelte from 'highlightjs-svelte';
 hljs_svelte(hljs);
 
 export default function(text,lang,interpolation=false) {
-    lang = (lang || 'svelte') === 'svelte' ? 'xml' : lang;
+    lang = (lang || 'svelte');
 
-    
-    const result = hljs.highlight(lang,"\n"+text);
+    const result = hljs.highlight(lang,text);
 
     let code = result.value
             .replace(/{/g,'&#123;')
-            .replace(/}/g,'&#125;')
-            .replace(/<span class="(javascript|css)">/g,"$&&nbsp;");
+            .replace(/}/g,'&#125;');
             
     if(interpolation){
         code = code
             .replace(/"/g,'\\"')
             .replace(/\n/g,'\\n');
     }
-
+    
     return code;
   }
