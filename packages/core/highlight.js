@@ -1,5 +1,5 @@
 import hljs from 'highlight.js';
-import hljs_svelte from 'highlightjs';
+import hljs_svelte from 'highlightjs-svelte';
 
 hljs_svelte(hljs);
 
