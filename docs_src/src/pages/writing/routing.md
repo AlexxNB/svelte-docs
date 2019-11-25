@@ -14,4 +14,4 @@ src                     #  URL path part:
 
 ```
 
-You can make links anywhere in your docs with URL part based on file hierarchy. For example, if you want to link to the `src/pages/components/button.md` you should use this href attribute for the `a` element - `components/button`. Or in markdown - `[Button](component/button)`.
+You can make links anywhere in your docs with URL part based on file hierarchy. For example, if you want create link to the `src/pages/components/button.md` use `components/button` as a href attribute of the `a` element - `components/button`. Or in markdown write - `[Button](component/button)`.

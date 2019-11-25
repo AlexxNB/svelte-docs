@@ -16,7 +16,7 @@ Markdown is a fast and comfortable way to write documentation, but MDSv providin
 
 This document also wrote in MDSv format, so we can do this right inside the document...
 
-```html
+```svelte
 <script>
     let items = ['item0','item1'];
     function add() { items = [...items,'item'+items.length] }

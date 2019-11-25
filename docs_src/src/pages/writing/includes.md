@@ -39,7 +39,7 @@ Or you can use an image as your logotype:
 
 ### topbar.md
 
-There you can manage right section of the topbar. For example add some links there:
+Play with right section of the topbar. For example add some links there:
 
 ```markdown
 * [Home](/)
@@ -48,11 +48,11 @@ There you can manage right section of the topbar. For example add some links the
 
 ### error.md
 
-Just an error message which will be shown when user try to load unexistent URL.
+Just an error message which will be shown when user requests unexistent URL.
 
 ## Custom includes
 
-You are free to add any `*.md` files there which you can to include on any page you want using special import path:
+You are free to create any `*.md` files which you can to include on any page you want using special import path:
 
 ```html
 <script>
