@@ -1,4 +1,7 @@
 import hljs from 'highlight.js';
+import hljs_svelte from 'highlightjs';
+
+hljs_svelte(hljs);
 
 export default function(text,lang,interpolation=false) {
     lang = (lang || 'svelte') === 'svelte' ? 'xml' : lang;
