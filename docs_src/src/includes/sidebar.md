@@ -11,7 +11,6 @@
     - [basepath](config/basepath)
     - [pathes](config/pathes)
     - [incPKG](config/incpkg)
-    - [incCSS](config/inccss)
     - [preprocess](config/preprocess)
 * Builtins
     - [Example](builtins/example)
