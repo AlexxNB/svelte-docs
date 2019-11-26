@@ -9,6 +9,7 @@
     - [Page settings](writing/settings)
 * [Configuration](config/file)
     - [basepath](config/basepath)
+    - [theme](config/theme)
     - [pathes](config/pathes)
     - [incPKG](config/incpkg)
     - [preprocess](config/preprocess)
