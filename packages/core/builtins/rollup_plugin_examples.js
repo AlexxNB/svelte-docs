@@ -50,12 +50,8 @@ export function examples_index() {
             if(id === 'examples_src.js') {
                 let file = `
                 import '${EX_IFRAME}';
-                import '${EX_CSS}';`;
-
-                config.incCSS.forEach(csspath => {
-                    if (!fs.existsSync(csspath)) ERR('Config.incCSS: No such file',csspath);
-                    file = file+`\nimport '${csspath}';`
-                })
+                import '${EX_CSS}';
+                `;
 
                 Object.keys(ExamplesStore.get()).forEach(name => {
                     file = file+`\nexport {default as ${name}} from '${name}.svelte';`

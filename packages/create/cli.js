@@ -118,7 +118,6 @@ const run = async opts => {
     log('Downloading docs template...');
     await fetchRepoDir([
       {src: 'alexxnb/svelte-docs/template', dir:name},
-      {src: 'alexxnb/svelte-docs/themes/'+theme.path, dir:path.join(name,'src','theme')}
     ]);
     log('Installing NPM packages...');
     exec(`npm --prefix ${name} install`);

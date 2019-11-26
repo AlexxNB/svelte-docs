@@ -5,26 +5,22 @@ const ln = require('symlink-dir')
 
 const PKGDIR = './packages';
 const TPLDIR = './template';
-const THMDIR = './themes/default';
 
 const DEVDIR = './__DEV__'
 
 const NMDIR = path.join(DEVDIR,'node_modules','@svelte-docs');
 
 async function run(){
-    
-    console.log('1. Symlink theme to the template dir');
-    ln(THMDIR,path.join(TPLDIR,'src','theme'));
 
-    console.log('2. Symlink template to the Dev dir');
+    console.log('1. Symlink template to the Dev dir');
     ln(TPLDIR,DEVDIR);
 
 
-    console.log('3. Do `npm i` in the Dev dir.');
+    console.log('2. Do `npm i` in the Dev dir.');
     await npm('install',TPLDIR);
 
 
-    console.log('4. Do `npm i` in all packages and symlinking it in template.');
+    console.log('3. Do `npm i` in all packages and symlinking it in template.');
 
     fs.mkdirpSync(NMDIR);
     fs.readdirSync(PKGDIR).forEach(async pkg => {
@@ -34,8 +30,6 @@ async function run(){
         }
     })
 
-    console.log('5. Symlink node_modules tho the themes dir');
-    ln(path.join(DEVDIR,'node_modules'),path.join(THMDIR,'..','node_modules'));
     console.log('Ready!');
 }
 

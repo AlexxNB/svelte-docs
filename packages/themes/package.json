@@ -1,0 +1,19 @@
+{
+  "name": "@svelte-docs/themes",
+  "version": "0.1.0",
+  "description": "Themes set for the svelte-docs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexxNB/svelte-docs.git"
+  },
+  "author": "Alexey Schebelev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexxNB/svelte-docs/issues"
+  },
+  "homepage": "https://alexxnb.github.io/svelte-docs",
+  "dependencies": {},
+  "devDependencies": {
+    "svelte": "^3.15.0"
+  }
+}

@@ -1,7 +1,4 @@
-/*   This is default CSS styles inside Examples component 
-*    It uses independently from other docs styles
-*/
-
+/* Styling of the examples view */
 
 body {
 	color: #333;
@@ -10,7 +7,6 @@ body {
 	box-sizing: border-box;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
-
 
 a {
 	color: rgb(0,100,200);

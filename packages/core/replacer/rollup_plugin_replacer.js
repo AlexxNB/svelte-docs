@@ -1,7 +1,8 @@
-import {CWD,INCLUDES,THEME} from './../constants';
+import {CWD,SRC,INCLUDES,THEME} from './../constants';
 
 const vars = {
     "@CWD": CWD,
+    "@SRC": SRC,
     "@INCLUDES": INCLUDES,
     "@THEME": THEME,
 }

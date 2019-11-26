@@ -4,6 +4,9 @@ module.exports = {
 
     // page title
     title: 'Svelte thing Documentation',
+
+    // theme 
+    theme: 'default',
     
     pathes: {
         // directory for files, generated in development mode 
@@ -24,14 +27,6 @@ module.exports = {
         //  import Button from './Button.svelte';
         //  import { Input } from 'mylib';
     },
-
-    incCSS: [
-        // CSS file with styles for Examples
-        // [ <local_path_to_css_file> ]
-        //
-        // Ex1: './mylib/theme.css',
-        // Ex2: './node_modules/chota/chota.css,
-    ],
     
     preprocess: [
         // preprocessors for Svelte if needed in Examples

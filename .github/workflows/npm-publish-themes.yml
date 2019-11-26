@@ -1,0 +1,26 @@
+name: Publish @svelte-docs/themes
+
+on:
+  push:
+    branches:    
+      - master 
+    paths:
+      - '.github/workflows/npm-publish-themes.yml'
+      - 'packages/themes/package.json'
+
+jobs:
+  publish-npm:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+      - name: Installing NPM deps
+        run: npm --prefix packages/themes install
+      - name: Building & publishing on NPM
+        run: cd packages/themes && npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
