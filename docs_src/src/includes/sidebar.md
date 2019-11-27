@@ -16,6 +16,9 @@
 * Builtins
     - [Example](builtins/example)
     - [Properties](builtins/properties)
-* [Theming](theming)
+* Styling
+    - [Theme tuning](theming/theme-tuning)
+    - [Examples view](theming/examples)
+    - [Custom theme](theming/custom-theme)
 * Publishing
     - [GitHub Pages](publishing/ghpages) 
