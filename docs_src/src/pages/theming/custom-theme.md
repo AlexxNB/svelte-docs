@@ -9,7 +9,7 @@ themedir
 |   ├── Error.svelte         # Error page layout
 |   ├── Example.svelte       # Example component
 |   └── Properties.svelte    # Properties component
-├── meta.json                # Some info about the theme
+├── info.md                # Some info about the theme
 └── style.css                # CSS Styles
 ```
 

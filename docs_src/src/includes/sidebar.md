@@ -20,5 +20,7 @@
     - [Theme tuning](theming/theme-tuning)
     - [Examples view](theming/examples)
     - [Custom theme](theming/custom-theme)
+    - List of themes
+        - [Default](theming/list/default)
 * Publishing
     - [GitHub Pages](publishing/ghpages) 
