@@ -1,6 +1,6 @@
 {
   "name": "@svelte-docs/themes",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Themes set for the svelte-docs",
   "repository": {
     "type": "git",
