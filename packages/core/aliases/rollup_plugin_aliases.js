@@ -1,3 +1,6 @@
+import path from 'path';
+import fs from 'fs';
+import { ERR } from './../utils.js';
 import config from './../config';
 
 // handle imports of virtual packages
