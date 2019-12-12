@@ -63,29 +63,3 @@ export function examples_index() {
         }
     }
 }
-
-
-// handle imports of virtual packages
-export function incpkg() {
-    return {
-        name: 'rollup_plugin_incpkg',
-
-        resolveId(id) { return config.incPKG[id] !== undefined ? id : null },
-        load(id) { 
-            if(config.incPKG[id] !== undefined){
-                const pkgpath = path.resolve(config.incPKG[id]);
-                if (!fs.existsSync(pkgpath)) ERR('Config.incPKG: No such file',pkgpath);
-
-                if(id.endsWith('.svelte')) 
-                    return fs.readFileSync(pkgpath,{encoding:'utf-8'});
-                else if(pkgpath.endsWith('.svelte')) 
-                    return `export {default} from '${pkgpath}';`; 
-                else
-                    return `export * from '${pkgpath}';`; 
-                
-            }else
-                return null;
-        }
-    }
-}
-

@@ -16,7 +16,7 @@ module.exports = {
         build: '__DOCS__/dist',
     },
     
-    incPKG:{
+    aliases:{
         // Virtual packages in Examples
         // <virtual_package_name>: <local_path>,
         //

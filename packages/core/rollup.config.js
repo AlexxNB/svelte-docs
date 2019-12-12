@@ -10,12 +10,12 @@ import postcss from 'rollup-plugin-postcss';
 import postcssImport from 'postcss-import';
 
 import replacer from './replacer/rollup_plugin_replacer';
+import aliases from './aliases/rollup_plugin_aliases';
 import indexer from './indexer/rollup_plugin_indexer';
 import syncer from './syncer/rollup_plugin_syncer';
 import fixidents from './fixidents/rollup_plugin_fixidents';
 import {pages} from './pages/rollup_plugin_pages';
-import {example_component,incpkg} from './builtins/rollup_plugin_examples';
-import {examples_sources,examples_index} from './builtins/rollup_plugin_examples';
+import {example_component, examples_sources,examples_index} from './builtins/rollup_plugin_examples';
 import {builtins} from './builtins/svelte_preprocess_builtins';
 
 import {INDEX,DEVPATH,BUILDPATH,EX_INDEX,SRC} from './constants';
@@ -38,6 +38,7 @@ export default [{
 	},
 	plugins: [
 		replacer(),
+		aliases(),
 		indexer(!production),
 		syncer(!production),
 		pages(),
@@ -83,7 +84,7 @@ export default [{
 		file: path.join(DIR,'examples.js')
 	},
 	plugins: [
-		incpkg(),
+		aliases(),
 		examples_index(),
 		examples_sources(),
 		production && fixidents(),
