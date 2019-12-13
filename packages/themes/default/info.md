@@ -36,3 +36,11 @@ Theme based on [offical Svelte documentation site](https://svelte.dev/docs).
 | `--hl-name`            | #c36031 |  |
 | `--hl-attr`            | #a18851 |  |
 | `--hl-builtin`         | #505050 |  |
+
+
+## Layouts
+
+|Name    |Description|
+|--------|-----------|
+| `default`      | Layout with topbar, sidebar on the left and content|
+| `no_sidebar`   | Layout without sidebar |
