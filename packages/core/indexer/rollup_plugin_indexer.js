@@ -40,6 +40,7 @@ if(config.favicon) meta.push(`<link rel='icon' type='image/png' href='${config.f
 if(config.preview) {
     meta.push(`<meta property='og:site_name' content='${config.title.main}'>`);
     meta.push(`<meta property='og:image' content='${config.preview}'>`);
+    meta.push(`<meta content='${config.preview}' name=twitter:image>`);
 }
 
 function getTemplate(){
