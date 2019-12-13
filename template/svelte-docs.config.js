@@ -1,5 +1,5 @@
 module.exports = {
-    // if you will serve docs in subderictory use '/subdir/'
+    // if you will serve docs in subdirictory use '/subdir/'
     basepath: '/',
 
     // theme 
@@ -9,11 +9,17 @@ module.exports = {
         // constant part of page title
         main: 'Svelte Thing Documentation',
 
-        // use first header's content in the window title 
-        // looking for `# Header` and `## Header` on the current page
+        // use first header's content as a part of page's title 
+        // it looks for `# Header` and `## Header` on the current page
         header: true,
     },    
 
+    // URL to your favicon
+    favicon: 'static/favicon.png',
+
+    // URL to your social link preview image (best is 1200×630)
+    preview: false,
+ 
     pathes: {
         // directory for files, generated in development mode 
         dev: '__DOCS__/dev',
