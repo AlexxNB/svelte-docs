@@ -1,5 +1,6 @@
 ---
 fullscreen: true
+title: false
 ---
 # Great Success
 

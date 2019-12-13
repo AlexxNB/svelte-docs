@@ -1,7 +1,9 @@
-import getRoutes from './routes'
+import getRoutes from './routes';
+import config from './../config';
 
 const imports = {
     "@svelte-docs/get/routes": getRoutes,
+    "@svelte-docs/get/maintitle": ()=>`export default '${config.title.main}'`,
 }
 
 export function pages() {

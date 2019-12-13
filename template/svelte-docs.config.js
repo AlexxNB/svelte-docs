@@ -2,12 +2,18 @@ module.exports = {
     // if you will serve docs in subderictory use '/subdir/'
     basepath: '/',
 
-    // page title
-    title: 'Svelte thing Documentation',
-
     // theme 
     theme: 'default',
-    
+
+    title: {
+        // constant part of page title
+        main: 'Svelte Thing Documentation',
+
+        // use first header's content in the window title 
+        // looking for `# Header` and `## Header` on the current page
+        header: false,
+    },    
+
     pathes: {
         // directory for files, generated in development mode 
         dev: '__DOCS__/dev',
@@ -17,13 +23,13 @@ module.exports = {
     },
     
     aliases:{
-        // Virtual packages in Examples
+        // Virtual packages 
         // <virtual_package_name>: <local_path>,
         //
         // Ex1: './Button.svelte': './../dist/Button.svelte',
         // Ex2: 'mylib': './../dist/index.js', (don't miss `index` and `.js` at the end!)
         //
-        //  Then you can use in Example:
+        //  Then you can use:
         //  import Button from './Button.svelte';
         //  import { Input } from 'mylib';
     },

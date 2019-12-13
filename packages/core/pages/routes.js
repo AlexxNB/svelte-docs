@@ -2,13 +2,19 @@ import path from 'path';
 import fs from 'fs';
 
 import {PAGES,STARTPAGE,ERROR_CMP} from './../constants';
+import config from './../config';
 
 
 export default function () {
     const pages = getRoutes(PAGES);
 
     const strImports = pages.map(item =>`import {default as ${item.component}, META as ${item.component}_META} from '${item.path}'`).join(";\n");
-    const strRoutes = pages.map(item =>`{url: '${item.route}', component:${item.component}, meta:${item.component}_META}`).join(",\n");
+    const strRoutes = pages.map(item =>`{
+        url: '${item.route}', 
+        component:${item.component}, 
+        title: (${item.component}_META.hasOwnProperty('title')) ? ${item.component}_META.title : ${item.title ? `'${item.title}'` : null},
+        meta:${item.component}_META
+    }`).join(",\n");
 
     return `${strImports}
     import Error from '${ERROR_CMP}';
@@ -39,7 +45,8 @@ function getRoutes(dir,slug='') {
     if(slug==='/') pages.push({
         component:'Startpage',
         route:'',
-        path:STARTPAGE
+        path:STARTPAGE,
+        title:retrieveTitleFromHeader(STARTPAGE)
     });
 
     fs.readdirSync(dir).forEach( file => {
@@ -57,7 +64,8 @@ function getRoutes(dir,slug='') {
                 pages.push({
                     component:compname,
                     route:url.slice(1),
-                    path:filepath
+                    path:filepath,
+                    title:retrieveTitleFromHeader(filepath)
                 });
             }
         }
@@ -81,4 +89,14 @@ function formatComponentName(text){
 
 function formatSlug(text){
     return text.replace(/[^\w\d\-]/g,'-');
+}
+
+function retrieveTitleFromHeader(filename){
+    if(config.title.header !== true) return null;
+
+    let source = fs.readFileSync(filename,'utf-8');
+
+    let re = /^\s*(#{1,2}(?!#)|<h(1|2)>)((.+)(\1|<\/h\2>)|(.+)$)/mi;
+    let result = source.match(re);
+    return (result) ? String(result[4] || result[6]).trim() : null;
 }

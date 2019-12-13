@@ -35,14 +35,14 @@ function goTree(dir,slug='') {
 }
 
 function getTemplate(title){
-    title = title ? `${title} - ${config.title}` : config.title;
+    title = title ? `${title} - ${config.title.main}` : config.title.main;
     const base = config.basepath;
 
     return `<!doctype html>
 <html>
 <head>
     <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width,initial-scale=1.0'>
+    <meta name='viewport' content='width=device-width,initial-scale=1.0'>runjs ubuntu
     <base href="${base}" />
     <title>${title}</title>
     <link rel='stylesheet' href='bundle.css'>
