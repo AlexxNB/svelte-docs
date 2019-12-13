@@ -17,7 +17,7 @@ module.exports = {
     favicon: 'static/favicon.png',
 
     // URL to your social link preview image (best is 1200×630)
-    preview: 'static/social.png',
+    preview: 'https://alexxnb.github.io/svelte-docs/static/social.png',
     
     pathes: {
         // directory for files, generated in development mode 
