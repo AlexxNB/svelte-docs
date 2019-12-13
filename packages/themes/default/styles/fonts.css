@@ -7,7 +7,7 @@
 	src:
 		local('Overpass Light '),
 		local('Overpass-Light'),
-		url('theme/fonts/overpass-300.woff2') format('woff2');
+		url('assets/fonts/overpass-300.woff2') format('woff2');
 }
 
 /* overpass-400normal */
