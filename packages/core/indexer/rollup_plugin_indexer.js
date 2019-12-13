@@ -38,7 +38,7 @@ function goTree(dir,slug='') {
 let meta = [];
 if(config.favicon) meta.push(`<link rel='icon' type='image/png' href='${config.favicon}'>`);
 if(config.preview) {
-    meta.push(`<meta property=“og:site_name” content=“${config.title.main}”>`);
+    meta.push(`<meta property='og:site_name' content='${config.title.main}'>`);
     meta.push(`<meta property='og:image' content='${config.preview}'>`);
 }
 
@@ -48,7 +48,7 @@ function getTemplate(){
 <html>
 <head>
     <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width,initial-scale=1.0'>runjs ubuntu
+    <meta name='viewport' content='width=device-width,initial-scale=1.0'>
     <base href="${config.basepath}" />
     <title>${config.title.main}</title>
     ${meta.join("\n")}
