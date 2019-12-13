@@ -10,6 +10,7 @@
 * [Configuration](config/file)
     - [basepath](config/basepath)
     - [theme](config/theme)
+    - [title](config/title)
     - [pathes](config/pathes)
     - [aliases](config/aliases)
     - [preprocess](config/preprocess)

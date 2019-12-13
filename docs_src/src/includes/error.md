@@ -1,3 +1,6 @@
+---
+layout: 'no_sidebar'
+---
 # Page not found! #
 
 [Go to start page](/)

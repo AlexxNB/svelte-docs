@@ -2,10 +2,16 @@ module.exports = {
     // if you will serve docs in subderictory use '/subdir/'
     basepath: '/svelte-docs/',
 
-    // page title
-    title: 'Svelte-Docs Reference',
-
     theme: 'default',
+
+    title: {
+        // constant part of page title
+        main: 'Svelte-Docs Reference',
+
+        // use first header's content in the window title 
+        // looking for `# Header` and `## Header` on the current page
+        header: true,
+    },  
     
     pathes: {
         // directory for files, generated in development mode 

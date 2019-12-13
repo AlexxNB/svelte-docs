@@ -1,5 +1,6 @@
 ---
-fullscreen: true
+layout: 'no_sidebar'
+title: false
 ---
 
 <div class="hero">

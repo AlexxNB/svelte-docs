@@ -80,12 +80,12 @@ Also you can import any local file by relative path according documents director
 <Button>Button</Button>
 ```
 
-Other way to import local files - using *virtual packages*(see [config.incPKG](config/incpkg)).
+Other way to import local files - using aliases (see [config.aliases](config/aliases)).
 
 ```javascript
 // svelte-docs.config.js
 ...
-incPKG:{
+aliases:{
     './Button.svelte': './../mylib/Button.svelte',
     'my-button-package': './../mylib/Button.svelte'
 },
@@ -105,8 +105,4 @@ incPKG:{
 
 ### Styling
 
-Styles of the documentation site doesn't affect on the Example's result. Examples have their own global styles(which will be used by all examples). It is stored in `src/theme/examples.css` file. 
-
-Also, you can include global styles from any local file or installed package using [config.incCSS](config/inccss) option.
-
-All styles inside `<style>` block in Examples are encapsulated like in ordinary Svelte component.
+Styles of the documentation site doesn't affect on the Example's result. Examples have their own global styles(which will be used by all examples). You can read more in the [Theming examples](theming/examples) section.It is stored in `src/theme/examples.css` file. 
