@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 
-import {PAGES,STARTPAGE,ERROR_CMP} from './../constants';
+import {PAGES,STARTPAGE,ERRORPAGE} from './../constants';
 import config from './../config';
 
 
@@ -17,7 +17,6 @@ export default function () {
     }`).join(",\n");
 
     return `${strImports}
-    import Error from '${ERROR_CMP}';
 
     import {derived} from 'svelte/store';
     import {url} from '@svelte-docs/core/navigation'
@@ -26,6 +25,8 @@ export default function () {
         ${strRoutes}
     ]
 
+    const error_route = routes.filter(r => r.url === 'sd:error')[0];
+
     export const current_page = derived(url,$url => {
 
         const route = routes.filter(r => r.url === $url);
@@ -33,7 +34,7 @@ export default function () {
         if(route.length > 0)
             return route[0];
         else
-            return {url:'404', component:Error, meta:{fullscreen: true}};
+            return error_route;
     });
     `;
 }
@@ -42,12 +43,21 @@ function getRoutes(dir,slug='') {
     slug = `${slug}/`;
 
     let pages = [];
-    if(slug==='/') pages.push({
-        component:'Startpage',
-        route:'',
-        path:STARTPAGE,
-        title:retrieveTitleFromHeader(STARTPAGE)
-    });
+    if(slug==='/') {
+        pages.push({
+            component:'Startpage',
+            route:'',
+            path:STARTPAGE,
+            title:retrieveTitleFromHeader(STARTPAGE)
+        });
+
+        pages.push({
+            component:'Errorpage',
+            route:'sd:error',
+            path:ERRORPAGE,
+            title:retrieveTitleFromHeader(ERRORPAGE)
+        });
+    }
 
     fs.readdirSync(dir).forEach( file => {
         const filepath = path.join(dir,file);

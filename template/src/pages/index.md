@@ -1,5 +1,5 @@
 ---
-fullscreen: true
+layout: 'no_sidebar'
 title: false
 ---
 # Great Success

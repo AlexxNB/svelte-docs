@@ -19,6 +19,7 @@
 	}
 
 	$: title = $current_page.title ? $current_page.title + ' — ' + maintitle : maintitle;
+	$: layout = $current_page.meta.layout ? $current_page.meta.layout : 'default';
 </script>
 
 <svelte:head>
@@ -30,15 +31,16 @@
 	<Topbar />
 </header>
 
-{#if $current_page.meta.fullscreen}
+{#if layout === 'no_sidebar'}
 
 	<!-- content -->
 	<main class="fullscreen">
 		<Document />
 	</main>
 
-{:else}
+{/if}
 
+{#if layout === 'default'}
 	<!-- side bar -->
 	<span class="showSidebar" tabindex="0"/>
 	<nav use:set_active_link>

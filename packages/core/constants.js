@@ -14,10 +14,9 @@ export const INCLUDES = path.join(SRC,'includes');
 export const THEME = getThemePath();
 export const STATIC = path.join(SRC,'static');
 export const STARTPAGE = path.join(PAGES,'index.md');
+export const ERRORPAGE = path.join(INCLUDES,'error.md');
 
 export const PROPS_CMP = path.join(THEME,'components','Properties.svelte');
-export const ERROR_CMP = path.join(THEME,'components','Error.svelte');
-
 export const EX_LAYOUT = path.join(THEME,'components','Example.svelte');
 export const EX_CSS = path.join(SRC,'examples.css');
 export const EX_CMP = path.join(CORE,'builtins','Example','Example.svelte');

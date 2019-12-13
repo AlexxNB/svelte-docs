@@ -11,7 +11,7 @@ module.exports = {
 
         // use first header's content in the window title 
         // looking for `# Header` and `## Header` on the current page
-        header: false,
+        header: true,
     },    
 
     pathes: {
