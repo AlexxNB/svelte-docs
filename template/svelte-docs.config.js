@@ -16,9 +16,6 @@ module.exports = {
 
     // URL to your favicon
     favicon: 'static/favicon.png',
-
-    // URL to your social link preview image (best is 1200×630)
-    preview: false,
  
     pathes: {
         // directory for files, generated in development mode 

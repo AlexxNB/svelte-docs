@@ -34,15 +34,6 @@ function goTree(dir,slug='') {
     });
 }
 
-
-let meta = [];
-if(config.favicon) meta.push(`<link rel='icon' type='image/png' href='${config.favicon}'>`);
-if(config.preview) {
-    meta.push(`<meta property='og:site_name' content='${config.title.main}'>`);
-    meta.push(`<meta property='og:image' content='${config.preview}'>`);
-    meta.push(`<meta content='${config.preview}' name=twitter:image>`);
-}
-
 function getTemplate(){
     
     return `<!doctype html>
@@ -52,7 +43,7 @@ function getTemplate(){
     <meta name='viewport' content='width=device-width,initial-scale=1.0'>
     <base href="${config.basepath}" />
     <title>${config.title.main}</title>
-    ${meta.join("\n")}
+    ${config.favicon ? `<link rel='icon' type='image/png' href='${config.favicon}'>` : ''}
     <link rel='stylesheet' href='bundle.css'>
     <script defer src='bundle.js'></script>
 </head>
