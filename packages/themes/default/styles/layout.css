@@ -88,8 +88,6 @@ nav{
 	background-color:var(--secondary);
 	box-shadow: 0 0 15px -5px var(--dark);
 	overflow-x: hidden;
-	transition: width .3s;
-	transition-delay: .2s;
 	z-index:1000;
 	color: var(--text-sidebar);
 }
@@ -122,13 +120,25 @@ nav ul li li{
 	margin: 0;
 }
 
-nava:hover, nav a.active{
+nav a:hover, nav a.active{
 	text-decoration: underline;
 }
 nav a.active::after {
 	float:right;
 	content: url('data:image/svg+xml;utf8,<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g><path fill="white" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></g></svg>');
 }
+
+.showNav{
+		position: fixed;
+		bottom: 10px;
+		left: 10px;
+		width:37px;
+		height:37px;
+		z-index: 10101;
+		border: 1px solid var(--dark);
+		background-color: var(--white);
+		cursor:pointer;
+	}
 
 
 /* Content */
@@ -153,6 +163,15 @@ article img {
     max-width: 100%;
 	height: auto;
 	margin: 0 auto;
+}
+
+main.mobile{
+	margin-left:0px;
+	max-width: 100%;
+}
+
+main.mobile article{
+	padding:0 1em;
 }
 
 /* Example block */
@@ -235,43 +254,4 @@ article img {
 
 .properties dd:last-of-type{
 	border-bottom: none;
-}
-
-
-
-/* Responsivity */
-.showSidebar{
-	display:none;
-	position: fixed;
-	bottom: 10px;
-	left: 10px;
-	width:37px;
-	height:37px;
-	z-index: 1001;
-	content: url('data:image/svg+xml;utf8,<svg  width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g><path fill="black" d="M19,13H3V11H19L15,7L16.4,5.6L22.8,12L16.4,18.4L15,17L19,13M3,6H13V8H3V6M13,16V18H3V16H13Z" /></g></svg>');
-	border: 1px solid var(--dark);
-	background-color: var(--white);
-}
-
-.showSidebar:focus{
-	content: url('data:image/svg+xml;utf8,<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g><path fill="black" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></g></svg>');
-}
-
-.showSidebar:focus ~ nav {
-    width:var(--sidebar-width);
-}
-
-
-@media (max-width: 800px) {
-	.showSidebar{display:block;}
-	nav {width: 0px;}
-	main{
-		margin-left:0px;
-		max-width: 100%;
-	}
-	article{
-		padding:0 1em;
-	}
-	.properties dt{width: 5em;}
-	.properties dt + dd + dd + dd{padding-left: 5em;}
 }
