@@ -20,12 +20,15 @@ title: false
 
 <style>
     .hero{
-        height:95vh;
-        position: relative;
+        display: flex;
+        flex-direction: column;
+        height:100vh;
+        margin-top: calc(var(--topbar-height) * -1);
     }
 
     .banner{
-        padding-top: 100px;
+        flex: 1 0 auto;
+        margin-top: 100px;
     }
 
     .banner img{
@@ -39,10 +42,9 @@ title: false
     }
 
     .buttons{
-        position: absolute;
-        bottom:100px;
-        width:100%;
+        flex: 0 0 auto;
         text-align: center;
+        margin-bottom: 100px;
     }
 
     .buttons a{
