@@ -10,6 +10,6 @@ My button component
 
 ## Properties
 ```properties
-name | Name of the button | string
+type | Type of the button | 'default','error','success'('default')
 disabled | Make button disabled | bool(false)
 ```
