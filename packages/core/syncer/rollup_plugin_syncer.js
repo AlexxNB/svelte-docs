@@ -1,4 +1,5 @@
 import path from 'path';
+import fs from 'fs-extra';
 import syncFolders from 'sync-folders';
 
 import {STATIC,THEME} from './../constants';
@@ -18,7 +19,10 @@ export default function (dev=false) {
         generateBundle(opts, bundle) { 
             const dir = opts.dir || path.dirname(opts.file);
             assets.forEach(asset => {
-                syncFolders(path.resolve(asset), dir, options);
+                const filepath = path.resolve(asset)
+                if(fs.statSync(filepath).isDirectory()){
+                    syncFolders(filepath, dir, options);
+                }
             })
         }
     }
