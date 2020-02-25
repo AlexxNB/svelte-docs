@@ -23,5 +23,6 @@
     - [Custom theme](theming/custom-theme)
     - List of themes
         - [Default](theming/list/default)
+        - [Light](theming/list/light)
 * Publishing
     - [GitHub Pages](publishing/ghpages) 
