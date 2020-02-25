@@ -20,7 +20,7 @@ export default function (dev=false) {
             const dir = opts.dir || path.dirname(opts.file);
             assets.forEach(asset => {
                 const filepath = path.resolve(asset)
-                if(fs.statSync(filepath).isDirectory()){
+                if(fs.pathExistsSync(filepath)){
                     syncFolders(filepath, dir, options);
                 }
             })
