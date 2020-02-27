@@ -58,6 +58,30 @@ Sometimes no need to show what is inside the *style* or *script* blocks. You can
 </style>
 ```
 
+### Set fixed height of the example
+
+By default result part of the example has flexible height, which changing within content. But you can lock height with `height:<pixels>` modifier.
+
+```markdown
+    ```example height:200
+     ...
+    ```
+```
+
+```example height:200
+<script>
+    import Modal from './Modal.svelte';
+    let open = false;
+</script>
+
+<button on:click={()=>open=!open}>Show Modal</button>
+
+<Modal {open}>
+    <h1>Hello!</h1>
+    <p>I'm modal.</p>
+</Modal>
+```
+
 ### Import in examples
 
 You can import any installed NPM package or local file as you usually do inside ordinary `*.svelte` file.

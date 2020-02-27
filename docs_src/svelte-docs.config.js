@@ -40,6 +40,7 @@ module.exports = {
         'svelte-chota': './exlibris/chota.js',
         './../mylib/Button.svelte': './exlibris/Button.svelte',
         './Button.svelte': './exlibris/Button.svelte',
+        './Modal.svelte': './exlibris/Modal.svelte',
         'my-button-package': './exlibris/Button.svelte',
     },
     
