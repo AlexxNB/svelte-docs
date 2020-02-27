@@ -8,10 +8,13 @@
 
     export let name;
     export let code;
+    export let height = false;
+
+    const fixedheight = Number.isInteger(height);
 
     let iframe;
     let iframe_id = uid++;
-    let iframe_height = 70;
+    let iframe_height = fixedheight ? height : 70;
 
     const srcdoc = `<!doctype html>
 <html style="height: auto !important">
@@ -30,7 +33,7 @@
 
     window.addEventListener('message', function (event) {
         if(event.data.iframe_id && event.data.iframe_id === iframe_id){
-            if (event.data.hasOwnProperty("HEIGHT")) {
+            if (!fixedheight && event.data.hasOwnProperty("HEIGHT")) {
                 iframe_height = event.data.HEIGHT;
             }
         }
