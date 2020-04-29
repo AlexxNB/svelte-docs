@@ -34,27 +34,47 @@ function parseJS(code){
 
     const node = espree.parse(code,{ecmaVersion:10,sourceType: "module"});
 
+    let vars = {};
     return node.body.reduce((list,node) => {
-      if(node.type !== 'ExportNamedDeclaration') return list;
+      
+      if(node.type === 'FunctionDeclaration' || node.type === 'VariableDeclaration'){
+        if(node.declarations) node.declarations.forEach(dec => vars[dec.id.name] = parseDeclarator(dec,node.kind));
+        return list;
+      }
       
       const sample = {index:node.start,type:'unknown',name:'unknown',default:undefined};
-      const decs = node.declaration.declarations ? node.declaration.declarations : [node.declaration];
-       
-      return [...list,...decs.reduce((sublist,dec)=>{
-        if(dec.type === 'FunctionDeclaration'){
-          sublist.push({...sample, ...{type:'method',name:dec.id.name}})
-        }   
-    
-        if(dec.type === 'VariableDeclarator'){
-          const def = dec.init === null ? undefined :
-                      dec.init.type === 'Literal' ? dec.init.raw :
-                      dec.init.type === 'FunctionExpression' ? 'func()' : undefined;
-          const type = node.declaration.kind === 'const' ? 'const' : 'property';
-          sublist.push({...sample, ...{type,name:dec.id.name,default:def}})
-        } 
-        return sublist;
-      },[])];
+      
+      if(node.declaration === null && node.specifiers.length > 0){
+        return [...list,...node.specifiers.reduce((sublist,spec)=>{
+          sublist.push({...sample,...(vars[spec.local.name] || {}),...{name:spec.exported.name}});
+          return sublist;
+        },[])]
+      }
+
+      if(node.type === 'ExportNamedDeclaration' && node.declaration){
+        const decs = node.declaration.declarations ? Array.from(node.declaration.declarations) : [node.declaration]; 
+        return [...list,...decs.reduce((sublist,dec)=>{
+          sublist.push({...sample,...parseDeclarator(dec,node.kind)});
+          return sublist;
+        },[])]
+      }
+
+      return list;
     },[]);
+}
+
+function parseDeclarator(dec,kind){
+  if(dec.type === 'FunctionDeclaration'){
+    return {type:'method',name:dec.id.name}
+  }   
+
+  if(dec.type === 'VariableDeclarator'){
+    const def = dec.init === null ? undefined :
+                dec.init.type === 'Literal' ? dec.init.raw :
+                dec.init.type === 'FunctionExpression' ? 'func()' : undefined;
+    const type = kind === 'const' ? 'const' : 'property';
+    return {type,name:dec.id.name,default:def}
+  } 
 }
 
 function parseJSDoc(code){
