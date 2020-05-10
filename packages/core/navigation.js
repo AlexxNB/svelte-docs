@@ -9,9 +9,16 @@ export function go(href){
 
 export function initNavigation() {
     addEventListener('click', click);
+    addEventListener('popstate', gohistory);
+    
     return function() {
         removeEventListener('click', click);
+        removeEventListener('popstate', gohistory);
     }
+}
+
+function gohistory(){
+    url.set(getURL());
 }
 
 function getURL() {
