@@ -30,8 +30,9 @@
 	function set_active_link(node){
 		return {
 			destroy: current_page.subscribe(page => {
+				const url = page.url || '/';
 				node.querySelectorAll('a').forEach(a => {
-				if(a.getAttribute('href') === page.url)
+				if(a.getAttribute('href') === url)
 					a.classList.add('active');
 				else
 					a.classList.remove('active')
