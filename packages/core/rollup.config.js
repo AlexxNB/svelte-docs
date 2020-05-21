@@ -49,7 +49,7 @@ export default [{
 			extensions: ['.svelte','.md'],
 			preprocess: [
 				builtins(),
-				markdown({highlight})
+				markdown({highlight,headerIds:true})
 			]
 		}),
 		postcss({
