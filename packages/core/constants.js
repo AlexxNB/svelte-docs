@@ -1,11 +1,13 @@
 import path from 'path';
+import importCWD from 'import-cwd';
 import {getThemePath} from './themes';
 
+const config = importCWD('./svelte-docs.config.js');
 export const CWD = process.cwd();
 export const CORE = path.resolve(path.join(CWD,'node_modules','@svelte-docs','core'));
 
-export const DEVPATH = path.join(CWD,'__DOCS__','dev');
-export const BUILDPATH = path.join(CWD,'__DOCS__','dist');
+export const DEVPATH = path.join(CWD,config.pathes.dev);
+export const BUILDPATH = path.join(CWD,config.pathes.build);
 export const INDEX = path.join(CORE,'main.js');
 
 export const SRC = path.join(CWD,'src');
