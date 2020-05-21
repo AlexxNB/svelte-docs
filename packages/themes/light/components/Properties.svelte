@@ -42,7 +42,7 @@
             <div class="types">{@html getTypes(prop.attr.types)}</div>
         </td>
         <td>
-            <div class="description">{prop.description ? prop.description : ''}</div>
+            <div class="description">{@html prop.description ? prop.description : ''}</div>
         </td>
     </tr>
 {/each}
