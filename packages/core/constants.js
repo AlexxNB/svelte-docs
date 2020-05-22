@@ -1,8 +1,7 @@
 import path from 'path';
-import importCWD from 'import-cwd';
+import config from './config';
 import {getThemePath} from './themes';
 
-const config = importCWD('./svelte-docs.config.js');
 export const CWD = process.cwd();
 export const CORE = path.resolve(path.join(CWD,'node_modules','@svelte-docs','core'));
 
