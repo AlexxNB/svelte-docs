@@ -12,20 +12,23 @@ export function ERR(text,comment) {
 export function getRealImportedPath(filepath){
 //0. is path exists
     if(fs.pathExistsSync(filepath)) return filepath;
+    const alias = config.aliases[filepath];
 
-    let pieces = config.incPKG[filepath].split('/');
-    let mdl = pieces[0];
-    let rel = pieces
+    if (alias) {
+        let pieces = alias.split('/');
+        let mdl = pieces[0];
+        let rel = pieces
 
 //1. plain search in virtual modules
-    if(config.incPKG[filepath] !== undefined){
-      filepath = path.resolve(config.incPKG[filepath]);
-      if(fs.pathExistsSync(filepath)) return filepath;
-    }
+        if(alias !== undefined){
+            filepath = path.resolve(alias);
+            if(fs.pathExistsSync(filepath)) return filepath;
+        }
 //2. relative search in virtual modules
-    if(config.incPKG[mdl] !== undefined) {
-        filepath = path.resolve(path.join(config.incPKG[mdl],rel));
-        if(fs.pathExistsSync(filepath)) return filepath;
+        if(config.aliases[mdl] !== undefined) {
+            filepath = path.resolve(path.join(config.aliases[mdl],rel));
+            if(fs.pathExistsSync(filepath)) return filepath;
+        }
     }
 
 //3. relative search in nodemodules
