@@ -24,8 +24,14 @@ export function getInterface(source){
 
 
 function extractScriptTag(source){
-    const match = /<script.*>([\s\S]+?)<\/script>/i.exec(source);
-    return match === null ? '' : match[1].trim();
+    const extractScriptRegex = /<script(.*?)>([\s\S]+?)<\/script>/gi;
+    let match = extractScriptRegex.exec(source);
+    
+    if (match && (match[1].includes(`context="module"`) || match[1].includes(`context='module'`))) {
+        match = extractScriptRegex.exec(source);
+    }
+    
+    return match === null ? '' : match[2].trim();
 }
 
 
