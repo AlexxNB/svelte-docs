@@ -16,6 +16,7 @@ const cli = meow(`
  
     Options
       --dev, -d  Development mode
+      --cors, -c  Enable "CORS" headers to allow any origin requestor
       --single, -s  SPA Mode
  
     Examples
@@ -25,6 +26,10 @@ const cli = meow(`
         dev: {
             type: 'boolean',
             alias: 'd'
+        },
+        cors: {
+            type: 'boolean',
+            alias: 'c'
         },
         single: {
             type: 'boolean',
@@ -36,6 +41,7 @@ const cli = meow(`
 const CWD = process.cwd();
 
 const DEV = cli.flags.dev;
+const CORS = cli.flags.cors;
 const SINGLE = cli.flags.single;
 
 const DIR = DEV ? path.join(CWD,config.pathes.dev) : path.join(CWD,config.pathes.build);
@@ -47,6 +53,10 @@ const mw = sirv(DIR, {
     dev: DEV,
     maxAge: 31536000, // 1Y
     immutable: true,
+    setHeaders: CORS ? (res) => {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept, Range');
+    } : undefined,
     onNoMatch: SINGLE ? (req, res) => (req.path=config.basepath,mw(req, res, () => (res.statusCode=404,res.end()))) : undefined
 });
 
