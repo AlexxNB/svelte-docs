@@ -4,7 +4,7 @@ export const url = writable(getURL());
 
 export function go(href){
     history.pushState({}, '', href === '' ? getBasepath() : href);
-    url.set(href);
+    url.set(href.split('#')[0]);
 }
 
 export function initNavigation() {
