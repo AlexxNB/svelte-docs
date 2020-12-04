@@ -7,7 +7,7 @@
     "espree": "^6.1.2",
     "fs-extra": "^8.1.0",
     "hasha": "^5.1.0",
-    "highlight.js": "^9.17.0",
+    "highlight.js": "^10.4.1",
     "highlightjs-svelte": "^1.0.4",
     "import-cwd": "^3.0.0",
     "node-watch": "^0.6.3",
