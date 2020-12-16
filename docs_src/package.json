@@ -6,12 +6,10 @@
     "@svelte-docs/server": "^0.1.5"
   },
   "devDependencies": {
-    "@svelte-docs/core": "^0.10.9",
+    "@svelte-docs/core": "^0.10.12",
     "@svelte-docs/publisher": "^0.2.3",
     "@svelte-docs/themes": "^0.3.0",
-    "npm-run-all": "^4.1.5",
-    "rollup": "^1.32.1",
-    "svelte": "^3.31.0"
+    "npm-run-all": "^4.1.5"
   },
   "scripts": {
     "build": "rollup -c node_modules/@svelte-docs/core/rollup.config.js",
