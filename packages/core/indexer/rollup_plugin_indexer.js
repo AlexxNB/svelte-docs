@@ -8,7 +8,7 @@ export default function (dev=false) {
 
     return {
         name: 'rollup_plugin_indexer',
-        generateBundle(opts, bundle) { 
+        writeBundle(opts) { 
             const dir = opts.dir || path.dirname(opts.file);
 
             fs.outputFileSync(path.join(dir,'index.html'),getTemplate());

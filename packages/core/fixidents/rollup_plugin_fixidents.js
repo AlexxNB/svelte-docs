@@ -11,9 +11,8 @@ export default function () {
     let FILE = '';
     return {
         name: 'rollup_plugin_fixident',
-        generateBundle(opts, bundle) { FILE = opts.file },
-        writeBundle: async (bundle) => {
-           fs.writeFileSync(FILE, bundle[path.basename(FILE)].code.replace(/innerHTML='<code.+?code>'/g,ident_remover));
+        writeBundle: async (opts, bundle) => {
+           fs.writeFileSync(opts.file, bundle[path.basename(opts.file)].code.replace(/innerHTML='<code.+?code>'/g,ident_remover));
         }
     }
 }
