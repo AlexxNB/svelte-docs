@@ -1,6 +1,6 @@
 {
   "name": "@svelte-docs/core",
-  "version": "0.10.11",
+  "version": "0.10.12",
   "description": "Core of Svelte-docs builder",
   "dependencies": {
     "@rollup/plugin-commonjs": "^11.1.0",
