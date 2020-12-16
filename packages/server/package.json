@@ -1,6 +1,6 @@
 {
   "name": "@svelte-docs/server",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "HTTP server to run Svelte-docs in development or production modes",
   "main": "server.js",
   "scripts": {},
@@ -20,6 +20,6 @@
     "console-clear": "^1.1.1",
     "import-cwd": "^3.0.0",
     "meow": "^5.0.0",
-    "sirv": "^0.4.2"
+    "sirv": "^0.4.6"
   }
 }

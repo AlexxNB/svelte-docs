@@ -1,6 +1,6 @@
 {
   "name": "create-svelte-docs",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "CLI tool to init docs source directory",
   "main": "cli.js",
   "bin": {
@@ -22,7 +22,7 @@
   "homepage": "https://alexxnb.github.io/svelte-docs",
   "dependencies": {
     "chalk": "^2.4.1",
-    "fetch-repo-dir": "^1.0.1",
+    "fetch-repo-dir": "^1.0.4",
     "fs-extra": "^8.1.0",
     "meow": "^5.0.0",
     "prompts": "^0.1.12",
