@@ -1,5 +1,7 @@
 # Svelte-Docs
 
+**Sorry, but current version of Svelte-Docs will not be developing anymore. I will rework whole project with `svelte-kit` as it will be released.**
+ 
 Svelte-Docs is a rapid way to write documentation for your Svelte components.
 
 ![](https://github.com/AlexxNB/svelte-docs/workflows/Publish%20create-svelte-docs/badge.svg)
