@@ -1,6 +1,6 @@
 # Svelte-Docs
 
-**Sorry, but current version of Svelte-Docs will not be developing anymore. I will rework whole project with `svelte-kit` as it will be released.**
+<span style="color:gold">**Sorry, but current version of Svelte-Docs will not be developing anymore. I will rework whole project with `svelte-kit` as it will be released.**</span>
  
 Svelte-Docs is a rapid way to write documentation for your Svelte components.
 
