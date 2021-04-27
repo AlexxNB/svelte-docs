@@ -49,7 +49,7 @@
         title="Result"
         scrolling="no"
         bind:this={iframe}
-        sandbox="allow-same-origin allow-popups-to-escape-sandbox allow-scripts allow-popups allow-forms allow-pointer-lock allow-top-navigation allow-modals allow-scripts"
+        sandbox="allow-same-origin allow-popups-to-escape-sandbox allow-scripts allow-popups allow-forms allow-pointer-lock allow-top-navigation allow-modals"
         {srcdoc}
     ></iframe>
      <pre slot="code" class="hljs"><code>{@html code.trim()}</code></pre>
