@@ -38,7 +38,7 @@ async function run() {
         publish_ghpages(DIR, function(err) {
             if(err) Err('Fail on publishing:',err);
             console.log(chalk.bold('Done!'));
-            console.log(chalk.green(`You can open it at https://${GITUSER.toLowerCase()}.github.com/${GITNAME}`));
+            console.log(chalk.green(`You can open it at https://${GITUSER.toLowerCase()}.github.io/${GITNAME}`));
             process.exit(0);
         });
     }else{
